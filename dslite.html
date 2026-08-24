@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/ndsl.jpg" alt="Nintendo DS Lite Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge nintendo">Nintendo DS / DS Lite</span>
@@ -40,7 +45,45 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Tipo de Flashcard</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Tipo de Flashcard / R4</th>
+            <th>Kernel Recomendado</th>
+            <th>Estado de Timebomb</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>R4 Original / Revolution (SD máx. 2GB)</strong></td>
+            <td>Wood R4 (v1.62)</td>
+            <td>Sin Timebomb</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>R4i SDHC / Dual-Core / Gold Pro (r4isdhc.com)</strong></td>
+            <td>YSMenu (RetroGameFan)</td>
+            <td>Anulada con YSMenu</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Ace3DS+ / R4i Gold 3DS RTS (r4ids.cn)</strong></td>
+            <td>Wood R4 Custom / AOS</td>
+            <td>Sin Timebomb</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -79,12 +122,50 @@
         <h3><i class="fa-solid fa-clock"></i> Solución a Errores y Timebomb</h3>
         <p>Consejos si la tarjeta no arranca o salta fecha vencida:</p>
         <ul>
-          <li>Si salta el error "Menu?" o pantalla en blanco, verifica que los archivos del Kernel estén en la raíz y no dentro de una carpeta contenedora.</li>
+          <li>Si salta el error "Menu?" o pantalla en blanco, verificá que los archivos del Kernel estén en la raíz y no dentro de una carpeta contenedora.</li>
           <li>Si salta aviso de firmware expirado, cambiá el año de la consola en ajustes a 2010 o usá el Kernel YSMenu para desactivar la Timebomb de forma definitiva.</li>
         </ul>
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué es la Timebomb (Bomba de tiempo) y cómo se soluciona?
+          </div>
+          <p class="faq-answer">
+            Es un código que incluyen algunos fabricantes en sus kernels para que la R4 deje de funcionar en cierta fecha (por ejemplo, después de 2020) y fuerce a comprar una nueva. Se soluciona cambiando el kernel oficial de la tarjeta por **YSMenu** (RetroGameFan) o retrasando la fecha del reloj de la consola.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué se queda la pantalla en "Loading..." o con el cartel "Menu?"
+          </div>
+          <p class="faq-answer">
+            Indica que la tarjeta R4 no encuentra el archivo ejecutable del kernel en la MicroSD. Ocurre cuando se copian los archivos dentro de una subcarpeta en lugar de extraerlos directamente en la raíz de la memoria, o si la SD está en un formato diferente a FAT32.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Puedo usar una tarjeta MicroSD de 64GB o 128GB en mi R4?
+          </div>
+          <p class="faq-answer">
+            Las tarjetas R4 SDHC modernas y las variantes Ace3DS+ aceptan MicroSD de más de 32GB siempre y cuando las formatees previamente en **FAT32** con un clúster de 32KB usando herramientas como GUIFormat. No obstante, para evitar lentitud al cargar listados de juegos, se recomiendan 32GB.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

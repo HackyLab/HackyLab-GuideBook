@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Sección (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/pctools.jpg" alt="PC Tools Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge pc">PC & Software</span>
@@ -40,7 +45,51 @@
       </a>
     </div>
 
-    <!-- Lista de Herramientas -->
+    <!-- TABLA RESUMEN DE SOFTWARE -->
+    <h3><i class="fa-solid fa-toolbox"></i> Resumen de Herramientas Recomendadas</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Programa</th>
+            <th>Función Principal</th>
+            <th>Uso Clave en Mods / Consolas</th>
+            <th>Licencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GUIFormat / FAT32 Format</strong></td>
+            <td>Formateo en FAT32</td>
+            <td>Preparar MicroSDs > 32GB para Switch, Wii, DSi y R4</td>
+            <td><span class="status-pill success">Gratis</span></td>
+          </tr>
+          <tr>
+            <td><strong>7-Zip</strong></td>
+            <td>Descompresión de archivos</td>
+            <td>Extraer packs AIO de CFW sin romper enlaces simbólicos</td>
+            <td><span class="status-pill success">Open Source</span></td>
+          </tr>
+          <tr>
+            <td><strong>Ventoy</strong></td>
+            <td>Lanzador Multiboot USB</td>
+            <td>Probar ISOs de Linux / Windows sin formatear el pendrive</td>
+            <td><span class="status-pill success">Open Source</span></td>
+          </tr>
+          <tr>
+            <td><strong>Notepad++</strong></td>
+            <td>Editor de Texto Avanzado</td>
+            <td>Editar archivos <code>.ini</code>, <code>.cfg</code> o parches DNS</td>
+            <td><span class="status-pill success">Open Source</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- LISTA DE HERRAMIENTAS -->
+    <h2 class="section-title"><i class="fa-solid fa-list-check"></i> Categorías de Softwares</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -84,6 +133,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Consejos
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué Windows no me deja formatear mi SD de 64GB en FAT32 nativamente?
+          </div>
+          <p class="faq-answer">
+            Por limitaciones heredadas en la herramienta de formateo de Windows, el sistema fuerza el uso de exFAT o NTFS en unidades mayores a 32GB. Por eso es indispensable usar **GUIFormat**, que saltea esta restricción y aplica FAT32 sin problemas.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es la diferencia entre Rufus y Ventoy?
+          </div>
+          <p class="faq-answer">
+            **Rufus** crea una sola instalación en el pendrive eliminando el contenido previo. **Ventoy** se instala una única vez en la unidad y te permite arrastrar múltiples archivos ISO directamente a la carpeta del pendrive para seleccionar cuál iniciar en el arranque.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué no se recomienda usar el Bloc de Notas de Windows para editar configs?
+          </div>
+          <p class="faq-answer">
+            El Bloc de Notas básico suele cambiar las codificaciones de texto (UTF-8 / ANSI) o alterar los saltos de línea tipo Unix/Linux (`LF` vs `CRLF`), lo que puede provocar que los archivos `.ini` o `.cfg` de los Custom Firmwares no sean leídos correctamente. **Notepad++** preserva el formato intacto.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

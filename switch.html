@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/switch.jpg" alt="Nintendo Switch Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge nintendo">Nintendo Switch</span>
@@ -40,7 +45,45 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Revisión de Consola</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Modelo de Consola</th>
+            <th>Método de Exploit</th>
+            <th>Requisito Hardware</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Switch V1 (Vulnerable / Unpatched)</strong></td>
+            <td>Fusee-Gelee (Software / RCM)</td>
+            <td>Jig RCM + Inyector Payload (PC/Android)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Switch V1 (Patched) / Switch V2 (Mariko)</strong></td>
+            <td>Hardware Exploit</td>
+            <td>Modchip (Picofly / Instinct / HWFLY)</td>
+            <td><span class="status-pill warning">Requiere Modchip</span></td>
+          </tr>
+          <tr>
+            <td><strong>Switch Lite / Switch OLED</strong></td>
+            <td>Hardware Exploit</td>
+            <td>Modchip (Picofly / Instinct) + Micro-soldadura</td>
+            <td><span class="status-pill warning">Requiere Modchip</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -86,6 +129,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Me pueden banear la consola por usar Atmosphère?
+          </div>
+          <p class="faq-answer">
+            Si configurás la <strong>EmuMMC</strong> independiente y mantenés activados el bloqueo de serie (Exosphere) y el filtro <strong>DNS Mitm</strong> en la partición liberada, el riesgo es sumamente bajo. Nunca instales respaldos (.NSP/.XCI) en la SysNAND ni juegues online en servidores oficiales desde la EmuMMC.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué la MicroSD debe estar obligatoriamente en FAT32?
+          </div>
+          <p class="faq-answer">
+            El controlador exFAT oficial de Nintendo para la Switch tiende a corromper archivos y datos guardados muy fácilmente cuando se ejecutan parches y Custom Firmwares. FAT32 es 100% estable y no tiene ningún límite de tamaño de juego si usás herramientas de instalación directa como **DBI Installer**.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si al iniciar un juego me aparece "Se ha producido un error"?
+          </div>
+          <p class="faq-answer">
+            Por lo general se debe a que te faltan los **sys-patches** actualizados para la versión de firmware que tenés instalada. Descargá e inyectá el pack de sys-patches en la raíz de tu MicroSD o actualizá las claves de sistema (sigpatches) correspondientes.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

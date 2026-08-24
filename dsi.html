@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/ndsi.jpg" alt="Nintendo DSi Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge nintendo">Nintendo DSi</span>
@@ -40,7 +45,39 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Modelo y Firmware</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Modelo de Consola</th>
+            <th>Método de Exploit Inicial</th>
+            <th>Hack Permanente</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nintendo DSi (Estándar)</strong></td>
+            <td>Memory Pit (Cámara DSi) / Flipnote</td>
+            <td>Unlaunch CFW</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nintendo DSi XL</strong></td>
+            <td>Memory Pit (Cámara DSi) / Flipnote</td>
+            <td>Unlaunch CFW</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -87,6 +124,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Es riesgoso instalar Unlaunch en la DSi?
+          </div>
+          <p class="faq-answer">
+            Si seguís los pasos correctamente y tenés la batería cargada durante la instalación, el proceso es muy seguro. Además, Unlaunch brinda protección casi total contra brindado (anti-brick) en la DSi, permitiendo acceder a un menú de recuperación manteniendo presionado <kbd>A</kbd> + <kbd>B</kbd> al encender.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si Memory Pit no se ejecuta al tocar la opción SD en la Cámara?
+          </div>
+          <p class="faq-answer">
+            Asegurate de que la ruta del archivo `pit.bin` sea exactamente `SD:/private/ds/app/48415645/pit.bin`. Si tu DSi tiene el firmware 1.4.5J (japonesa) o alguna revisión especial y falla, podés probar usar otros métodos como **Style Savvy** o **Flipnote Lenny**.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Necesito un flashcard R4 para jugar juegos de DS con esta liberación?
+          </div>
+          <p class="faq-answer">
+            No. **TWiLight Menu++** lee las ROMs directamente desde la tarjeta SD de la consola usando nds-bootstrap, liberándote de la necesidad de usar cartuchos R4 o flashcards externas.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

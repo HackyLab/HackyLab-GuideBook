@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola -->
+    <div class="guide-banner">
+      <img src="img/ps3.jpg" alt="PS3 Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge ps">PlayStation 3</span>
@@ -40,7 +45,51 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad de Modelos y Métodos</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Modelo de Consola</th>
+            <th>Método Recomendado</th>
+            <th>Tipo de Hack</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>PS3 Fat (Todos los modelos)</strong></td>
+            <td>CFW Evilnat / PS3HEN</td>
+            <td>Permanente (Full CFW)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>PS3 Slim (20xx / 21xx / 25xx*)</strong></td>
+            <td>CFW Evilnat / PS3HEN</td>
+            <td>Permanente (*Revisar MinVer)</td>
+            <td><span class="status-pill success">Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>PS3 Slim (30xx)</strong></td>
+            <td>HFW 4.91 + PS3HEN</td>
+            <td>Temporal (Requiere activar)</td>
+            <td><span class="status-pill warning">Solo PS3HEN</span></td>
+          </tr>
+          <tr>
+            <td><strong>PS3 SuperSlim (40xx / 42xx / 43xx)</strong></td>
+            <td>HFW 4.91 + PS3HEN</td>
+            <td>Temporal (Requiere activar)</td>
+            <td><span class="status-pill warning">Solo PS3HEN</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -60,8 +109,9 @@
         <p>Inyección del exploit para consolas no compatibles con CFW directo (SuperSlim y Slim 3000/2500 tardías):</p>
         <ul>
           <li>Abrí el navegador oficial de la PS3, borrá cookies, historial y caché.</li>
-          <li>Ingresá a la web oficial de HEN o usá el instalador offline descomprimido en la raíz de tu pendrive.</li>
+          <li>Ingresá a la web oficial de HEN (o usá el instalador offline en tu USB).</li>
           <li>Hacé clic en <strong>Auto HEN Installer</strong>. El sistema descargará e instalará la app <strong>Enable HEN</strong> en el menú XMB.</li>
+          <li><em>Nota: Si tu consola es compatible con CFW permanente, en lugar de HEN debés usar el parcheador de Flash (bgtoolset) e instalar Evilnat CFW.</em></li>
         </ul>
       </div>
 
@@ -70,9 +120,9 @@
         <h3><i class="fa-solid fa-gears"></i> Instalación de Gestores (webMAN MOD / multiMAN)</h3>
         <p>Instalación de utilidades esenciales para montar juegos y controlar temperaturas:</p>
         <ul>
-          <li>Activar HEN desde el icono de la barra de juegos.</li>
+          <li>Activá HEN desde el ícono en la columna de juegos del XMB.</li>
           <li>Colocá los archivos <code>.pkg</code> en la raíz del USB e instalalos desde <strong>Administrador de archivos PKG ➔ Archivos PKG estándar</strong>.</li>
-          <li>Instalá <strong>webMAN MOD</strong> (mantené presionado <kbd>L1</kbd> al abrir la app para la instalación completa).</li>
+          <li>Instalá <strong>webMAN MOD</strong> (mantené presionado <kbd>L1</kbd> al abrir la app para ejecutar la instalación completa).</li>
         </ul>
       </div>
 
@@ -83,11 +133,49 @@
         <ul>
           <li><strong>Juegos en formato ISO:</strong> Ubicalos en <code>/PS3ISO/</code>, <code>/PS2ISO/</code> o <code>/PS1ISO/</code> (soporta discos en NTFS o exFAT usando IRISMAN/webMAN).</li>
           <li><strong>Juegos en formato Carpeta:</strong> Copialos dentro de la ruta <code>dev_hdd0/GAMES/</code> en el disco interno de la PS3.</li>
-          <li><strong>Juegos PKG + Archivos RAP:</strong> Los instalás vía PKG y colocás sus licencias <code>.rap</code> en la carpeta <code>exdata</code> de tu pendrive.</li>
+          <li><strong>Juegos PKG + Archivos RAP:</strong> Los instalás vía PKG y colocás sus licencias <code>.rap</code> en la carpeta <code>exdata</code> de tu pendrive (con la cuenta de la PS3 activada).</li>
         </ul>
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es la diferencia entre CFW y PS3HEN?
+          </div>
+          <p class="faq-answer">
+            <strong>CFW</strong> es una modificación permanente del sistema operativo (enciende 100% hackeada), pero solo es compatible con PS3 Fat y Slims antiguas. <strong>PS3HEN</strong> es un exploit en memoria que requiere presionar "Enable HEN" cada vez que encendés la PS3, pero funciona en absolutamente todas las consolas (incluyendo SuperSlim).
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué los juegos en PKG me dicen "Error de Licencia" o piden PSN?
+          </div>
+          <p class="faq-answer">
+            Te falta activar la consola o no colocaste la licencia <code>.rap</code>. Tenés que crear una cuenta de usuario local, vincularla activando la consola offline con <strong>Apollo Save Tool</strong> (o iniciando sesión una vez en PSN) y poner el archivo <code>.rap</code> en la carpeta <code>exdata</code> del pendrive USB.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué la consola acelera los ventiladores después de instalar webMAN?
+          </div>
+          <p class="faq-answer">
+            webMAN MOD toma el control térmico de la PS3 para evitar que el procesador (CELL/RSX) sufra sobrecalentamiento. Por defecto mantiene la consola por debajo de los 68°C. Podés ajustar la velocidad del cooler desde la configuración web de webMAN presionando <code>SELECT + START</code>.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

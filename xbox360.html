@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/xbox360.jpg" alt="Xbox 360 Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge xbox">Xbox 360</span>
@@ -40,7 +45,45 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Requisitos y Métodos de Carga</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Versión de Dashboard</th>
+            <th>Método Aplicable</th>
+            <th>Requiere Unidad de Disco / HDD</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Dashboard 2.0.17559.0 (Oficial)</strong></td>
+            <td>BadUpdate ($SystemUpdate Mod)</td>
+            <td>Pendrive FAT32 + Disco/Memoria Interna</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Dashboards Anteriores (17511 - 17544)</strong></td>
+            <td>BadAvatar / Savegame Payload</td>
+            <td>Pendrive FAT32 con carpetas de Avatares</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Consolas con RGH / Hardmod previo</strong></td>
+            <td>DashLaunch Directo / XeXMenu</td>
+            <td>Cualquier almacenamiento reconocido</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -88,6 +131,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿La consola no detecta el cartel de actualización al conectar el USB?
+          </div>
+          <p class="faq-answer">
+            Si la consola no salta el aviso automático, renombrá la carpeta en el pendrive de <code>$SystemUpdate</code> a <code>$$SystemUpdate</code>. Esto suele ocurrir si la consola detecta que ya tiene aplicada la versión de Dashboard actual y requiere forzar la relectura.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es la diferencia entre juegos en formato GOD y XEX?
+          </div>
+          <p class="faq-answer">
+            El formato **GOD** (Games On Demand) es la estructura de contenedores oficial de Microsoft (subcarpetas de 16 caracteres), compatible con la biblioteca del Dashboard original. El formato **XEX** extrae los archivos individuales del juego, facilitando la instalación de mods, traducción de textos y reemplazo de datos.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Es seguro conectar la consola a Internet usando Aurora o DashLaunch?
+          </div>
+          <p class="faq-answer">
+            No debes conectar la consola a los servidores oficiales de Xbox Live sin un **Stealth Server** activo, ya que la consola será baneada rápidamente. DashLaunch incluye opciones como `liveblock = true` activadas por defecto en el `launch.ini` para prevenir conexiones accidentales a Xbox Live.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

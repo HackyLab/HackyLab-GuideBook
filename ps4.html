@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/ps4.jpg" alt="PS4 Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge ps">PlayStation 4</span>
@@ -40,41 +45,40 @@
       </a>
     </div>
 
-  <h3><i class="fa-solid fa-microchip"></i> Tabla de Compatibilidad de Firmware</h3>
+    <h3><i class="fa-solid fa-microchip"></i> Tabla de Compatibilidad de Firmware</h3>
 
-<div class="table-container">
-  <table class="custom-table">
-    <thead>
-      <tr>
-        <th>Versión de Firmware</th>
-        <th>Kernel Exploit (Kex)</th>
-        <th>Tasa de Éxito / Estabilidad</th>
-        <th>Estado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>FW 7.00 - 12.02</strong></td>
-        <td>Lapse Kex</td>
-        <td>~100% (Muy Alta)</td>
-        <td><span class="status-pill success">Totalmente compatible</span></td>
-      </tr>
-      <tr>
-        <td><strong>FW 12.50 - 13.00</strong></td>
-        <td>NetControl / Poopsploit</td>
-        <td>50% - 80% (Media)</td>
-        <td><span class="status-pill warning">Compatible (Reintentos)</span></td>
-      </tr>
-      <tr>
-        <td><strong>FW 13.02 o Superior</strong></td>
-        <td>Ninguno (Solo Userland)</td>
-        <td>0% (Incompleto)</td>
-        <td><span class="status-pill danger">¡No actualizar!</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-    </section>
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Versión de Firmware</th>
+            <th>Kernel Exploit (Kex)</th>
+            <th>Tasa de Éxito / Estabilidad</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>FW 7.00 - 12.02</strong></td>
+            <td>Lapse Kex</td>
+            <td>~100% (Muy Alta)</td>
+            <td><span class="status-pill success">Totalmente compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>FW 12.50 - 13.00</strong></td>
+            <td>NetControl / Poopsploit</td>
+            <td>50% - 80% (Media)</td>
+            <td><span class="status-pill warning">Compatible (Reintentos)</span></td>
+          </tr>
+          <tr>
+            <td><strong>FW 13.02 o Superior</strong></td>
+            <td>Ninguno (Solo Userland)</td>
+            <td>0% (Incompleto)</td>
+            <td><span class="status-pill danger">¡No actualizar!</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- RUTA Y ESCENARIOS DE INSTALACIÓN -->
     <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Seleccioná tu Caso de Instalación</h2>
@@ -155,22 +159,41 @@
 
     </div>
 
-    <!-- PREGUNTAS FRECUENTES / CASOS DE BORRADO -->
-    <section class="info-section">
-      <h2><i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores</h2>
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
       <div class="faq-grid">
-        <div class="faq-item">
-          <h4>¿Se puede usar Vue AfterFree sin pendrive USB?</h4>
-          <p>Sí. El pendrive solo hace falta la primera vez para pasar el payload <code>goldhen.bin</code> al almacenamiento interno de la PS4 (<code>/data/</code>). Luego podés desenchufarlo para siempre.</p>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Se puede usar Vue AfterFree sin pendrive USB?
+          </div>
+          <p class="faq-answer">
+            Sí. El pendrive solo hace falta la primera vez para pasar el payload <code>goldhen.bin</code> al almacenamiento interno de la PS4 (<code>/data/</code>). Luego podés desenchufarlo para siempre.
+          </p>
         </div>
-        <div class="faq-item">
-          <h4>¿Qué hago si sufro Kernel Panic (Apagón de la consola)?</h4>
-          <p>En versiones 12.50 - 13.00, la estabilidad ronda el 60-80%. Si la consola se apaga de golpe, desenchufala unos segundos, encendela, dejá que reconstruya la base de datos y reintentá. Si persiste, considerá usar la opción BD-JB.</p>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si sufro Kernel Panic (Apagón de la consola)?
+          </div>
+          <p class="faq-answer">
+            En versiones 12.50 - 13.00, la estabilidad ronda el 60-80%. Si la consola se apaga de golpe, desenchufala unos segundos, encendela, dejá que reconstruya la base de datos y reintentá. Si persiste, considerá usar la opción BD-JB.
+          </p>
         </div>
-        <div class="faq-item">
-          <h4>¿Qué es NP-Fake-SignIn?</h4>
-          <p>Es un payload opcional que evita que la PS4 te pida iniciar sesión en PSN cada vez que abrís aplicaciones que requieren cuenta en la consola.</p>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué es NP-Fake-SignIn?
+          </div>
+          <p class="faq-answer">
+            Es un payload opcional que evita que la PS4 te pida iniciar sesión en PSN cada vez que abrís aplicaciones que requieren cuenta en la consola.
+          </p>
         </div>
+
       </div>
     </section>
 

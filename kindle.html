@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola / Dispositivo (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/kindle.jpg" alt="Amazon Kindle Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge kindle">Amazon Kindle</span>
@@ -40,7 +45,45 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Dispositivo y Firmware</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Modelo de Kindle</th>
+            <th>Rango de Firmware</th>
+            <th>Método de Jailbreak</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kindle Paperwhite 10ª/11ª Gen / Basic / Oasis</strong></td>
+            <td>FW 5.16.2.1.1 o inferior</td>
+            <td>LanguageBreak (Vía Idioma)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Kindle Modelos Antiguos (PW 1/2/3, Touch, Voyage)</strong></td>
+            <td>FW 5.14.2 u anterior</td>
+            <td>WatchBreak / KindleBreak</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cualquier Kindle</strong></td>
+            <td>FW 5.16.3 o superior</td>
+            <td>En desarrollo / Requiere Downgrade si es viable</td>
+            <td><span class="status-pill warning">No Compatible / Bloqueado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -88,6 +131,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Puedo perder el Jailbreak si el Kindle se actualiza?
+          </div>
+          <p class="faq-answer">
+            Sí. Si el dispositivo se conecta a Internet y descarga un nuevo firmware de Amazon, se perderán las firmas del jailbreak. Mantené el <strong>Modo Avión</strong> activado o utilizá parches de bloqueo OTA como <code>renamedotbin</code> mediante KUAL.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuáles son las ventajas de usar KOReader en lugar del sistema nativo?
+          </div>
+          <p class="faq-answer">
+            KOReader permite leer archivos **EPUB** directamente sin necesidad de convertirlos con Calibre, ofrece refinado nativo de PDF (reflow), gestión de gestos, sincronización en la nube con Dropbox/WebDAV y personalización completa del refresco de pantalla E-Ink.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si KUAL no abre y sale el cartel "Application Error"?
+          </div>
+          <p class="faq-answer">
+            Por lo general ocurre porque el **Hotfix** no se instaló correctamente tras el primer reinicio, o porque la versión de KUAL no es la adecuada para arquitecturas de 32/64 bits según tu modelo. Volvé a ejecutar el instalador `Update_hotfix_.bin` desde los ajustes de la consola.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

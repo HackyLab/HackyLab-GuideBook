@@ -20,7 +20,7 @@
 
     <!-- Banner con la foto de la PSP -->
     <div class="guide-banner">
-      <img src="../img/psp.jpg" alt="PSP Banner">
+      <img src="img/psp.jpg" alt="PSP Banner">
     </div>
 
     <!-- Encabezado de la Guía -->
@@ -46,7 +46,45 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Modelo de PSP</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Modelo de Consola</th>
+            <th>Método Permanente</th>
+            <th>Tipo de Placa</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>PSP 1000 (FAT)</strong></td>
+            <td>New cIPL Flasher / Infinity 2.0</td>
+            <td>Liberable (IPL Hack)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>PSP 2000 (Slim - No TA-088v3)</strong></td>
+            <td>New cIPL Flasher / Infinity 2.0</td>
+            <td>Liberable (IPL Hack)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>PSP 3000 / Go / Street (E1000)</strong></td>
+            <td>Infinity 2.0 / ARK-4 cIPL (Nuevos)</td>
+            <td>Maldita (No IPL clásica)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <!-- PASO 1 -->
@@ -80,7 +118,7 @@
         <p>Para que el exploit no se borre al apagar la consola por completo:</p>
         <ul>
           <li><strong>PSP 1000 y 2000 (Placas liberables):</strong> Ejecutá <code>ARK cIPL Flasher</code> desde el menú de juegos para aplicar el arranque permanente directo en la placa base.</li>
-          <li><strong>PSP 3000, Go y Street (E1000):</strong> Ejecutá <code>Infinity 2.0</code>, presiona <kbd>X</kbd> para instalar, reiniciá la consola, volvé a abrir Infinity, tocá la flecha izquierda y marcá <strong>ARK-4</strong> con <kbd>X</kbd>.</li>
+          <li><strong>PSP 3000, Go y Street (E1000):</strong> Ejecutá <code>Infinity 2.0</code>, presioná <kbd>X</kbd> para instalar, reiniciá la consola, volvé a abrir Infinity, tocá la flecha izquierda y marcá <strong>ARK-4</strong> con <kbd>X</kbd>.</li>
         </ul>
       </div>
 
@@ -96,6 +134,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es la diferencia entre ARK-4 y los viejos PRO-C / ME?
+          </div>
+          <p class="faq-answer">
+            ARK-4 es el Custom Firmware más moderno y actualizado para PSP. Ofrece mayor compatibilidad con juegos, soporte mejorado para plugins, un menú VSH totalmente personalizable y cIPL compatible con modelos que antes requerían Infinity.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué mis juegos de PS1 (PSX) se quedan en pantalla negra?
+          </div>
+          <p class="faq-answer">
+            Asegurate de que el archivo esté renombrado como <code>EBOOT.PBP</code> dentro de una subcarpeta (ejemplo: <code>MS0:/PSP/GAME/Crash/EBOOT.PBP</code>). Si el problema persiste, activá el plugin <strong>POPSloader</strong> dentro del menú de ARK-4 para cargar kernels de versiones anteriores.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si la consola no reconoce los juegos en la carpeta ISO?
+          </div>
+          <p class="faq-answer">
+            Verificá que la carpeta en la raíz se llame exactamente <code>ISO</code> (en mayúsculas) y que el nombre del archivo no contenga símbolos especiales ni sea demasiado largo.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 

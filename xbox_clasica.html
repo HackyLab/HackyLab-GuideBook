@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/xbox.jpg" alt="Xbox Clásica Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge xbox">Xbox Clásica</span>
@@ -40,7 +45,39 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Métodos de Liberación por Revisión de Consola</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Revisión de Xbox</th>
+            <th>Método Recomendado</th>
+            <th>Mod de Hardware (Alternativo)</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Xbox v1.0 a v1.5</strong></td>
+            <td>ENDGAME / Savegame Exploit</td>
+            <td>TSOP Flashing (Puente de Soldadura)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Xbox v1.6 / v1.6b (Xcalibur chip)</strong></td>
+            <td>ENDGAME / Savegame Exploit</td>
+            <td>Modchip (Aladdin / Modxbx) + LPC Rebuild</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -70,7 +107,7 @@
         <h3><i class="fa-solid fa-hard-drive"></i> Cambio de Disco Rígido HDD (Chimp / FATXplorer)</h3>
         <p>Reemplazo del disco IDE original de 8GB/10GB por un disco SATA de hasta 2TB:</p>
         <ul>
-          <li><strong>Método PC (FATXplorer):</strong> Conectá el nuevo disco SATA a la PC con un adaptador, formatealo en formato FATX con parches LBA48 y bloquealo utilizando la clave de tu `eeprom.bin` previamente respaldada.</li>
+          <li><strong>Método PC (FATXplorer):</strong> Conectá el nuevo disco SATA a la PC con un adaptador, formatealo en formato FATX con parches LBA48 y bloquealo utilizando la clave de tu <code>eeprom.bin</code> previamente respaldada.</li>
           <li><strong>Método Consola (Chimp 261812):</strong> Conectá el nuevo disco SATA mediante un adaptador IDE-SATA en modo Slave junto con un cable IDE de 80 hilos. Ejecutá Chimp desde UnleashX para clonar el disco Master al Slave y bloquéalo.</li>
         </ul>
       </div>
@@ -87,6 +124,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué es fundamental guardar la copia de la EEPROM (`eeprom.bin`)?
+          </div>
+          <p class="faq-answer">
+            Los discos rígidos de Xbox Clásica están bloqueados con una clave única vinculada a la placa madre. Si el disco original falla o se corrompe y no tenés la `eeprom.bin` guardada en tu PC, no podrás bloquear un nuevo disco y la consola quedará inoperativa (Error 05 / 06) salvo que instales un Modchip.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Necesito un cable IDE de 80 hilos para instalar un disco SATA?
+          </div>
+          <p class="faq-answer">
+            Sí, obligatoriamente. El cable IDE original de fábrica es de 40 hilos y no soporta las velocidades de transferencia ni la estabilidad que requieren los adaptadores IDE-SATA modernos. Usar el cable original provocará congelamientos o errores de lectura.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué es Insignia y necesito pagar suscripción?
+          </div>
+          <p class="faq-answer">
+            **Insignia** es un reemplazo gratuito del servicio original Xbox Live para la consola Xbox clásica. Te permite crear cuentas, agregar amigos, guardar estadísticas y jugar multijugador online en juegos soportados directamente desde los menús del juego original sin necesidad de PC.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>

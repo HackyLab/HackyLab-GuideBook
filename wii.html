@@ -18,6 +18,11 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
+    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <div class="guide-banner">
+      <img src="img/wii.jpg" alt="Nintendo Wii Banner">
+    </div>
+
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge nintendo">Nintendo Wii</span>
@@ -40,7 +45,45 @@
       </a>
     </div>
 
-    <!-- Pasos -->
+    <!-- TABLA DE COMPATIBILIDAD -->
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Modelo de Consola</h3>
+
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Modelo de Consola</th>
+            <th>Métodos de Exploit</th>
+            <th>Soporte GameCube</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Wii Estándar (RVL-001 - Vertical)</strong></td>
+            <td>LetterBomb / Str2hax / Wilbrand</td>
+            <td>Nativo (Puertos de Control + Memory Card)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Wii Family Edition (RVL-101 - Horizontal)</strong></td>
+            <td>LetterBomb / Str2hax / Wilbrand</td>
+            <td>Vía Nintendont (Solo controles USB/Classic)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Wii mini (RVL-201 - Roja y Negra)</strong></td>
+            <td>Bluebomb (Vía Bluetooth en Linux)</td>
+            <td>Vía Nintendont (Requiere Mod de SD/USB)</td>
+            <td><span class="status-pill warning">Requiere Bluebomb</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PASOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
+
     <div class="steps-container">
 
       <div class="step-card">
@@ -87,6 +130,44 @@
       </div>
 
     </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+      <h2 class="faq-title">
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+      </h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿En qué puerto USB debo conectar el disco rígido o pendrive?
+          </div>
+          <p class="faq-answer">
+            En la Wii original, debés conectar la unidad USB en el <strong>Puerto 0</strong> (si la consola está acostada, es el puerto USB inferior; si está parada, el de la derecha). El otro puerto no tiene soporte para la carga de backups con cIOS d2x.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué USB Loader GX se queda en "Waiting for HDD" o se congela?
+          </div>
+          <p class="faq-answer">
+            Suele ocurrir por usar un pendrive incompatible, no haber instalado los cIOS d2x en los slots 249/250 o haber conectado la unidad en el puerto USB equivocado. Asegurate de que la unidad esté formateada en **FAT32** con tamaño de clúster de 32 KB.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Puedo jugar a GameCube en consolas sin puertos de control de GameCube?
+          </div>
+          <p class="faq-answer">
+            Sí. Usando <strong>Nintendont</strong> podés jugar con un Mando Pro de Wii, Wiimote + Classic Controller, o incluso conectar joysticks de PS3, PS4 o USB genéricos a la consola.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>
