@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Hackyntosh | Softmod & Documentación Técnica</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,8 +45,8 @@
     <!-- Búsqueda y Filtros -->
     <div class="search-filter-box">
       <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Buscar consola o guía (ej. PS3, Switch, Memory Pit)...">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar consola o guía (ej. PS3, Switch, RGH)...">
       </div>
 
       <div class="filter-pills">
@@ -72,15 +72,15 @@
     <div class="cards-grid" id="cardsGrid">
 
       <!-- PS3 -->
-      <a href="ps3.html" class="guide-card-link" data-category="playstation">
+      <a href="ps3.html" class="guide-card-link" data-category="playstation" data-keywords="ps3 playstation 3 hen hfw 4.91 cfw evilnat multiman webman">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/ps3.jpg" alt="PlayStation 3">
+            <img src="img/ps3.jpg" alt="PlayStation 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PS3</span>
           </div>
           <div class="card-content">
-            <h3>PS3 HEN 4.91</h3>
+            <h3>PS3 HEN 4.91 / CFW</h3>
             <p>Instalación de Firmware Híbrido (HFW) + HEN en consolas Fat, Slim y SuperSlim.</p>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
@@ -91,16 +91,16 @@
       </a>
 
       <!-- PS4 -->
-      <a href="ps4.html" class="guide-card-link" data-category="playstation">
+      <a href="ps4.html" class="guide-card-link" data-category="playstation" data-keywords="ps4 playstation 4 goldhen pppwn 9.00 11.00 itemzflow">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/ps4.jpg" alt="PlayStation 4">
+            <img src="img/ps4.jpg" alt="PlayStation 4" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PS4</span>
           </div>
           <div class="card-content">
-            <h3>PS4 Vue After Free-GoldHEN</h3>
-            <p>Exploit desde la app VUE para firmwares 9.00 a 13.00 </p>
+            <h3>PS4 VUE GoldHEN (7.00 / 13.00)</h3>
+            <p>Exploit VUE After Free (7.00 - 13.00), carga de PKGs y parches.</p>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -110,10 +110,10 @@
       </a>
 
       <!-- PSP -->
-      <a href="psp.html" class="guide-card-link" data-category="playstation">
+      <a href="psp.html" class="guide-card-link" data-category="playstation" data-keywords="psp ark-4 cfw 6.61 infinity ps1 pops">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/psp.jpg" alt="PSP">
+            <img src="img/psp.jpg" alt="PSP" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PSP</span>
           </div>
@@ -129,10 +129,10 @@
       </a>
 
       <!-- PS2 -->
-      <a href="ps2.html" class="guide-card-link" data-category="playstation">
+      <a href="ps2.html" class="guide-card-link" data-category="playstation" data-keywords="ps2 playstation 2 freemcboot fmcb funtuna opl mx4sio">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/ps2.jpg" alt="PlayStation 2">
+            <img src="img/ps2.jpg" alt="PlayStation 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PS2</span>
           </div>
@@ -148,10 +148,10 @@
       </a>
 
       <!-- SWITCH -->
-      <a href="switch.html" class="guide-card-link" data-category="nintendo">
+      <a href="switch.html" class="guide-card-link" data-category="nintendo" data-keywords="switch nintendo atmosphere hekate emummc dbi picofly">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/switch.jpg" alt="Nintendo Switch">
+            <img src="img/switch.jpg" alt="Nintendo Switch" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">Switch</span>
           </div>
@@ -167,10 +167,10 @@
       </a>
 
       <!-- WII -->
-      <a href="wii.html" class="guide-card-link" data-category="nintendo">
+      <a href="wii.html" class="guide-card-link" data-category="nintendo" data-keywords="wii nintendo letterbomb str2hax cios d2x priiloader">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/wii.jpg" alt="Nintendo Wii">
+            <img src="img/wii.jpg" alt="Nintendo Wii" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">Wii</span>
           </div>
@@ -186,10 +186,10 @@
       </a>
 
       <!-- DSI -->
-      <a href="dsi.html" class="guide-card-link" data-category="nintendo">
+      <a href="dsi.html" class="guide-card-link" data-category="nintendo" data-keywords="dsi memory pit unlaunch twilight menu nintendo">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/ndsi.jpg" alt="Nintendo DSi">
+            <img src="img/ndsi.jpg" alt="Nintendo DSi" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">DSi</span>
           </div>
@@ -205,10 +205,10 @@
       </a>
 
       <!-- DS LITE -->
-      <a href="dslite.html" class="guide-card-link" data-category="nintendo">
+      <a href="dslite.html" class="guide-card-link" data-category="nintendo" data-keywords="ds lite r4 ysmenu flashcard timebomb">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/ndsl.jpg" alt="DS Lite">
+            <img src="img/ndsl.jpg" alt="DS Lite" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">DS Lite</span>
           </div>
@@ -224,16 +224,16 @@
       </a>
 
       <!-- XBOX 360 -->
-      <a href="xbox360.html" class="guide-card-link" data-category="xbox">
+      <a href="xbox360.html" class="guide-card-link" data-category="xbox" data-keywords="xbox 360 badupdate badavatar aurora dashlaunch xexmenu">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/xbox360.jpg" alt="Xbox 360">
+            <img src="img/xbox360.jpg" alt="Xbox 360" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge xbox card-badge-top">Xbox 360</span>
           </div>
           <div class="card-content">
-            <h3>Xbox 360 RGH3</h3>
-            <p>Glitch instantáneo sin chip, flasheo de NAND y Dashboard Aurora 0.7b.</p>
+            <h3>Xbox 360 BadUpdate & Aurora</h3>
+            <p>Softmod por actualización de avatares, DashLaunch y Dashboard Aurora.</p>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -243,10 +243,10 @@
       </a>
 
       <!-- XBOX CLÁSICA -->
-      <a href="xbox_clasica.html" class="guide-card-link" data-category="xbox">
+      <a href="xbox_clasica.html" class="guide-card-link" data-category="xbox" data-keywords="xbox clasica original endgame rocky5 unleashx insignia">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/xbox.jpg" alt="Xbox Clasica">
+            <img src="img/xbox.jpg" alt="Xbox Clasica" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge xbox card-badge-top">Xbox</span>
           </div>
@@ -262,10 +262,10 @@
       </a>
 
       <!-- KINDLE -->
-      <a href="kindle.html" class="guide-card-link" data-category="otros">
+      <a href="kindle.html" class="guide-card-link" data-category="otros" data-keywords="kindle languagebreak amazon jailbreak koreader kual">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/kindle.jpg" alt="Kindle">
+            <img src="img/kindle.jpg" alt="Kindle" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge otros card-badge-top">Kindle</span>
           </div>
@@ -281,10 +281,10 @@
       </a>
 
       <!-- HERRAMIENTAS PC -->
-      <a href="pctools.html" class="guide-card-link" data-category="otros">
+      <a href="pctools.html" class="guide-card-link" data-category="otros" data-keywords="tools pc guiformat hxd tegrarcmgui rufus herramientas">
         <div class="card">
           <div class="card-image-wrapper">
-            <img src="img/ps3.jpg" alt="PC Tools">
+            <img src="img/pctools.jpg" alt="PC Tools" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
             <div class="card-image-overlay"></div>
             <span class="badge otros card-badge-top">Herramientas</span>
           </div>
@@ -303,6 +303,45 @@
 
   </main>
 
-  <script src="app.js"></script>
+  <!-- Filter & Search Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.guide-card-link');
+
+      let currentFilter = 'all';
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          filterCards();
+        });
+      });
+
+      searchInput.addEventListener('input', filterCards);
+
+      function filterCards() {
+        const query = searchInput.value.toLowerCase().trim();
+
+        cards.forEach(card => {
+          const category = card.dataset.category;
+          const keywords = (card.dataset.keywords || '').toLowerCase();
+          const title = card.querySelector('h3').textContent.toLowerCase();
+
+          const matchesCategory = (currentFilter === 'all' || category === currentFilter);
+          const matchesQuery = (title.includes(query) || keywords.includes(query));
+
+          if (matchesCategory && matchesQuery) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
