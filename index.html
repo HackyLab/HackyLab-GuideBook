@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackyntosh | Softmod & Documentación Técnica</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Fondo Neón Cyberpunk -->
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <i class="fa-solid fa-terminal brand-icon"></i>
+        <span class="brand-title">HACKYNTOSH</span>
+        <span class="brand-version">v2.1</span>
+      </a>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Google Drive Direct</span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-tag">
+        <i class="fa-solid fa-bolt"></i> GUÍAS DE LIBERACIÓN & SOFTMOD
+      </div>
+      <h1>Hackyntosh</h1>
+      <p>
+        Documentación técnica directa, estructurada y sin acortadores. Seleccioná tu consola para acceder a la guía.
+      </p>
+    </header>
+
+    <!-- Búsqueda y Filtros -->
+    <div class="search-filter-box">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar consola o guía (ej. PS3, Switch, Memory Pit)...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="filter-pills">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fa-solid fa-border-all"></i> Todo
+        </button>
+        <button class="filter-btn" data-filter="playstation">
+          <i class="fa-brands fa-playstation"></i> PlayStation
+        </button>
+        <button class="filter-btn" data-filter="nintendo">
+          <i class="fa-solid fa-gamepad"></i> Nintendo
+        </button>
+        <button class="filter-btn" data-filter="xbox">
+          <i class="fa-brands fa-xbox"></i> Xbox
+        </button>
+        <button class="filter-btn" data-filter="otros">
+          <i class="fa-solid fa-toolbox"></i> Herramientas
+        </button>
+      </div>
+    </div>
+
+    <!-- Grilla de Consolas -->
+    <div class="cards-grid" id="cardsGrid">
+
+      <!-- PS3 -->
+      <a href="ps3.html" class="guide-card-link" data-category="playstation">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/ps3.jpg" alt="PlayStation 3">
+            <div class="card-image-overlay"></div>
+            <span class="badge ps card-badge-top">PS3</span>
+          </div>
+          <div class="card-content">
+            <h3>PS3 HEN 4.91</h3>
+            <p>Instalación de Firmware Híbrido (HFW) + HEN en consolas Fat, Slim y SuperSlim.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- PS4 -->
+      <a href="ps4.html" class="guide-card-link" data-category="playstation">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/ps4.jpg" alt="PlayStation 4">
+            <div class="card-image-overlay"></div>
+            <span class="badge ps card-badge-top">PS4</span>
+          </div>
+          <div class="card-content">
+            <h3>PS4 Vue After Free-GoldHEN</h3>
+            <p>Exploit desde la app VUE para firmwares 9.00 a 13.00 </p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- PSP -->
+      <a href="psp.html" class="guide-card-link" data-category="playstation">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/psp.jpg" alt="PSP">
+            <div class="card-image-overlay"></div>
+            <span class="badge ps card-badge-top">PSP</span>
+          </div>
+          <div class="card-content">
+            <h3>PSP ARK-4 CFW 6.61</h3>
+            <p>Parche permanente Infinity 2.0 y soporte POPS para juegos de PS1.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- PS2 -->
+      <a href="ps2.html" class="guide-card-link" data-category="playstation">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/ps2.jpg" alt="PlayStation 2">
+            <div class="card-image-overlay"></div>
+            <span class="badge ps card-badge-top">PS2</span>
+          </div>
+          <div class="card-content">
+            <h3>PS2 FreeMcBoot / OPL</h3>
+            <p>Carga de juegos desde USB, HDD, Red SMB o adaptador SD MX4SIO.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- SWITCH -->
+      <a href="switch.html" class="guide-card-link" data-category="nintendo">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/switch.jpg" alt="Nintendo Switch">
+            <div class="card-image-overlay"></div>
+            <span class="badge nintendo card-badge-top">Switch</span>
+          </div>
+          <div class="card-content">
+            <h3>Switch Atmosphere & Hekate</h3>
+            <p>Inyección de Payloads, creación de emuMMC aislada y protección anti-baneos.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- WII -->
+      <a href="wii.html" class="guide-card-link" data-category="nintendo">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/wii.jpg" alt="Nintendo Wii">
+            <div class="card-image-overlay"></div>
+            <span class="badge nintendo card-badge-top">Wii</span>
+          </div>
+          <div class="card-content">
+            <h3>Wii Softmod LetterBomb</h3>
+            <p>Instalación de Homebrew Channel, protección Priiloader y cIOS d2x.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- DSI -->
+      <a href="dsi.html" class="guide-card-link" data-category="nintendo">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/ndsi.jpg" alt="Nintendo DSi">
+            <div class="card-image-overlay"></div>
+            <span class="badge nintendo card-badge-top">DSi</span>
+          </div>
+          <div class="card-content">
+            <h3>DSi Memory Pit & Unlaunch</h3>
+            <p>Exploit mediante la cámara, bootloader permanente y TWiLight Menu++.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- DS LITE -->
+      <a href="dslite.html" class="guide-card-link" data-category="nintendo">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/ndsl.jpg" alt="DS Lite">
+            <div class="card-image-overlay"></div>
+            <span class="badge nintendo card-badge-top">DS Lite</span>
+          </div>
+          <div class="card-content">
+            <h3>DS Lite R4 & YSMenu</h3>
+            <p>Puesta a punto de flashcards Slot-1 y bypass de timebombs con YSMenu.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- XBOX 360 -->
+      <a href="xbox360.html" class="guide-card-link" data-category="xbox">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/xbox360.jpg" alt="Xbox 360">
+            <div class="card-image-overlay"></div>
+            <span class="badge xbox card-badge-top">Xbox 360</span>
+          </div>
+          <div class="card-content">
+            <h3>Xbox 360 RGH3</h3>
+            <p>Glitch instantáneo sin chip, flasheo de NAND y Dashboard Aurora 0.7b.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- XBOX CLÁSICA -->
+      <a href="xbox_clasica.html" class="guide-card-link" data-category="xbox">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/xbox.jpg" alt="Xbox Clasica">
+            <div class="card-image-overlay"></div>
+            <span class="badge xbox card-badge-top">Xbox</span>
+          </div>
+          <div class="card-content">
+            <h3>Xbox Clásica Rocky5</h3>
+            <p>Softmod con partidas guardadas, respaldo de EEPROM y UnleashX.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- KINDLE -->
+      <a href="kindle.html" class="guide-card-link" data-category="otros">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/kindle.jpg" alt="Kindle">
+            <div class="card-image-overlay"></div>
+            <span class="badge otros card-badge-top">Kindle</span>
+          </div>
+          <div class="card-content">
+            <h3>Kindle LanguageBreak</h3>
+            <p>Jailbreak para eReaders Amazon, lanzador KUAL y lector KOReader para EPUBs.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- HERRAMIENTAS PC -->
+      <a href="pctools.html" class="guide-card-link" data-category="otros">
+        <div class="card">
+          <div class="card-image-wrapper">
+            <img src="img/ps3.jpg" alt="PC Tools">
+            <div class="card-image-overlay"></div>
+            <span class="badge otros card-badge-top">Herramientas</span>
+          </div>
+          <div class="card-content">
+            <h3>Toolbox PC Essentials</h3>
+            <p>GUIFormat, HxD Hex Editor, TegraRcmGUI, Rufus y utilidades esenciales.</p>
+            <div class="card-footer">
+              <span>Ver Guía Paso a Paso</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

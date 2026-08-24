@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xbox Clásica Softmod & Insignia | Hackyntosh</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+
+    <header class="guide-header">
+      <div class="guide-title-group">
+        <span class="badge xbox">Xbox Clásica</span>
+        <span class="v-badge">v1.0 a v1.6 (Todas)</span>
+      </div>
+      <h1>Xbox Original: Softmod Rocky5 + UnleashX & Insignia</h1>
+      <p class="guide-subtitle">
+        Liberación por software mediante el exploit ENDGAME o partidas guardadas modificadas. Incluye instalación de Xbox Softmod Tool de Rocky5, cambio de disco rígido (HDD SATA) y registro en el servicio de Xbox Live alternativo Insignia.
+      </p>
+    </header>
+
+    <!-- Caja de Descarga GOOGLE DRIVE -->
+    <div class="download-card">
+      <div class="download-info">
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Xbox Clásica en Google Drive</h3>
+        <p>Servidor Oficial Google Drive (ENDGAME exploit, Xbox Softmod Tool v1.2.0, Chimp HDR, Dashboard UnleashX, XBMC y Setup Insignia).</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+        <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
+      </a>
+    </div>
+
+    <!-- Pasos -->
+    <div class="steps-container">
+
+      <div class="step-card">
+        <span class="step-number">Paso 01</span>
+        <h3><i class="fa-solid fa-usb"></i> Preparación del Pendrive USB o Memory Unit</h3>
+        <p>Carga de archivos del exploit mediante adaptador USB a puerto de mando de Xbox:</p>
+        <ul>
+          <li><strong>Método ENDGAME (Sin Juego Requerido):</strong> Formateá un pendrive de baja capacidad (menor a 4GB) con <strong>DriveExplorer</strong> en formato FATX y copiá el exploit ENDGAME en la tarjeta de memoria.</li>
+          <li><strong>Método Savegame (Splinter Cell / 007 / Agent Under Fire):</strong> Pasá la partida guardada modificada de Rocky5 a la tarjeta de memoria o USB adaptado.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 02</span>
+        <h3><i class="fa-solid fa-bolt"></i> Ejecución de Xbox Softmod Tool (Rocky5)</h3>
+        <p>Inyección de la EEPROM y parches del Dashboard:</p>
+        <ul>
+          <li>Ingresá al administrador de memoria original del Dashboard de Xbox y seleccioná el pendrive USB.</li>
+          <li>Copiá el archivo de guardado al disco rígido de la consola.</li>
+          <li>Si usás ENDGAME, abrilo directamente desde el gestor de memoria. Si usás Savegame, iniciá el juego correspondiente y cargá la partida.</li>
+          <li>El instalador de Rocky5 se ejecutará automáticamente: realizá un respaldo (Dump) de la **EEPROM** y confirmá la instalación del Softmod.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 03</span>
+        <h3><i class="fa-solid fa-hard-drive"></i> Cambio de Disco Rígido HDD (Chimp / FATXplorer)</h3>
+        <p>Reemplazo del disco IDE original de 8GB/10GB por un disco SATA de hasta 2TB:</p>
+        <ul>
+          <li><strong>Método PC (FATXplorer):</strong> Conectá el nuevo disco SATA a la PC con un adaptador, formatealo en formato FATX con parches LBA48 y bloquealo utilizando la clave de tu `eeprom.bin` previamente respaldada.</li>
+          <li><strong>Método Consola (Chimp 261812):</strong> Conectá el nuevo disco SATA mediante un adaptador IDE-SATA en modo Slave junto con un cable IDE de 80 hilos. Ejecutá Chimp desde UnleashX para clonar el disco Master al Slave y bloquéalo.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 04</span>
+        <h3><i class="fa-solid fa-globe"></i> Configuración de Insignia (Xbox Live Online)</h3>
+        <p>Restauración del multijugador online oficial de Xbox Clásica:</p>
+        <ul>
+          <li>Descargá la app de configuración de **Insignia Setup** y ejecútala desde el menú de aplicaciones de UnleashX.</li>
+          <li>Registrá la consola para obtener la clave de autenticación e ingresá una dirección de correo válida.</li>
+          <li>Iniciá cualquier juego compatible (Halo 2, Star Wars Battlefront II, Counter-Strike) y conectate a Xbox Live como en los viejos tiempos.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS3 Custom Firmware & HEN | Hackyntosh</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+
+    <header class="guide-header">
+      <div class="guide-title-group">
+        <span class="badge ps">PlayStation 3</span>
+        <span class="v-badge">FW 4.90 / 4.91 HFW</span>
+      </div>
+      <h1>PS3: Hybrid Firmware HFW + PS3HEN / CFW Evilnat</h1>
+      <p class="guide-subtitle">
+        Liberación para todas las consolas PS3 (Fat, Slim y SuperSlim). Habilita la ejecución de juegos en ISO, carpetas en HDD interno/externo (NTFS/exFAT), instalaciones de PKG con licencias RAP y control de coolers con webMAN MOD.
+      </p>
+    </header>
+
+    <!-- Caja de Descarga GOOGLE DRIVE -->
+    <div class="download-card">
+      <div class="download-info">
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack PS3 HFW, HEN & Homebrew en Google Drive</h3>
+        <p>Servidor Oficial Google Drive (HFW 4.91.1, PS3HEN Auto-Installer, multiMAN, IRISMAN, webMAN MOD y PKGi PS3).</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+        <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
+      </a>
+    </div>
+
+    <!-- Pasos -->
+    <div class="steps-container">
+
+      <div class="step-card">
+        <span class="step-number">Paso 01</span>
+        <h3><i class="fa-solid fa-cloud-arrow-up"></i> Instalación del Firmware Híbrido (HFW)</h3>
+        <p>Preparación del sistema oficial para aceptar el exploit web:</p>
+        <ul>
+          <li>Formateá un pendrive USB en sistema de archivos <strong>FAT32</strong> (tabla MBR).</li>
+          <li>Copiá el archivo de actualización HFW dentro de la ruta: <code>USB:/PS3/UPDATE/PS3UPDAT.PUP</code>.</li>
+          <li>En la PS3, andá a <strong>Ajustes ➔ Actualización del sistema ➔ Actualizar mediante un soporte de almacenamiento</strong> e instalalo dos veces (para asegurar ambas flash).</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 02</span>
+        <h3><i class="fa-solid fa-globe"></i> Activación de PS3HEN desde el Navegador</h3>
+        <p>Inyección del exploit para consolas no compatibles con CFW directo (SuperSlim y Slim 3000/2500 tardías):</p>
+        <ul>
+          <li>Abrí el navegador oficial de la PS3, borrá cookies, historial y caché.</li>
+          <li>Ingresá a la web oficial de HEN o usá el instalador offline descomprimido en la raíz de tu pendrive.</li>
+          <li>Hacé clic en <strong>Auto HEN Installer</strong>. El sistema descargará e instalará la app <strong>Enable HEN</strong> en el menú XMB.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 03</span>
+        <h3><i class="fa-solid fa-gears"></i> Instalación de Gestores (webMAN MOD / multiMAN)</h3>
+        <p>Instalación de utilidades esenciales para montar juegos y controlar temperaturas:</p>
+        <ul>
+          <li>Activar HEN desde el icono de la barra de juegos.</li>
+          <li>Colocá los archivos <code>.pkg</code> en la raíz del USB e instalalos desde <strong>Administrador de archivos PKG ➔ Archivos PKG estándar</strong>.</li>
+          <li>Instalá <strong>webMAN MOD</strong> (mantené presionado <kbd>L1</kbd> al abrir la app para la instalación completa).</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 04</span>
+        <h3><i class="fa-solid fa-hard-drive"></i> Carga de Juegos PS3, PS2, PS1 y PKG</h3>
+        <p>Rutas necesarias en el disco interno o USB externo:</p>
+        <ul>
+          <li><strong>Juegos en formato ISO:</strong> Ubicalos en <code>/PS3ISO/</code>, <code>/PS2ISO/</code> o <code>/PS1ISO/</code> (soporta discos en NTFS o exFAT usando IRISMAN/webMAN).</li>
+          <li><strong>Juegos en formato Carpeta:</strong> Copialos dentro de la ruta <code>dev_hdd0/GAMES/</code> en el disco interno de la PS3.</li>
+          <li><strong>Juegos PKG + Archivos RAP:</strong> Los instalás vía PKG y colocás sus licencias <code>.rap</code> en la carpeta <code>exdata</code> de tu pendrive.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+</body>
+</html>

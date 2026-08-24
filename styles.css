@@ -1,0 +1,595 @@
+/* ==========================================================================
+   RESET & VARIABLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+:root {
+  --bg-dark: #0a0b10;
+  --card-bg: rgba(20, 24, 36, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --accent-cyan: #00f2fe;
+  --accent-blue: #4facfe;
+  --text-main: #f0f4f8;
+  --text-muted: #94a3b8;
+  
+  /* Badges por Plataforma */
+  --ps-color: #00439c;
+  --nintendo-color: #e60012;
+  --xbox-color: #107c41;
+  --otros-color: #7c3aed;
+  
+  /* Botón Google Drive */
+  --gdrive-green: #34a853;
+  --gdrive-hover: #2d9248;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   FONDO CIBERPUNK Y AURORA
+   ========================================================================== */
+.aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.25;
+}
+
+.blob-1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, #00f2fe, #4facfe);
+}
+
+.blob-2 {
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, #7928ca, #ff0080);
+}
+
+.cyber-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ==========================================================================
+   LAYOUT PRINCIPAL
+   ========================================================================== */
+.main-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 60px 20px;
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+  color: var(--accent-cyan);
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.brand-version {
+  font-size: 0.75rem;
+  background: rgba(0, 242, 254, 0.15);
+  color: var(--accent-cyan);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   BÚSQUEDA Y FILTROS
+   ========================================================================== */
+.search-filter-box {
+  margin-bottom: 35px;
+}
+
+.search-bar {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 20px 14px 45px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+}
+
+.search-bar i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.filter-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: rgba(0, 242, 254, 0.15);
+  color: var(--accent-cyan);
+  border-color: rgba(0, 242, 254, 0.4);
+}
+
+/* ==========================================================================
+   GRILLA DE TARJETAS DE CONSOLAS
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.guide-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* FIX DEFINITIVO DE IMÁGENES: Fondo blanco + Zoom Out + Visión Completa */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #ffffff; /* Se fusiona con el fondo de tus fotos */
+  padding: 12px; /* Margen interno para el efecto "zoom out" */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Se ve la consola COMPLETA sin recortes */
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-image-wrapper img {
+  transform: scale(1.08); /* Animación suave al pasar el mouse */
+}
+
+.card-image-overlay {
+  display: none; /* Desactivado para no oscurecer la foto blanca */
+}
+
+.card-badge-top {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+/* BADGES */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.badge.ps { background-color: var(--ps-color); }
+.badge.nintendo { background-color: var(--nintendo-color); }
+.badge.xbox { background-color: var(--xbox-color); }
+.badge.otros { background-color: var(--otros-color); }
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.card-content p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 12px;
+}
+
+/* ==========================================================================
+   ESTILOS DE GUÍAS INDIVIDUALES (ps3.html, ps4.html, etc.)
+   ========================================================================== */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(-4px);
+}
+
+/* BANNER SUPERIOR EN LAS GUÍAS INDIVIDUALES */
+.guide-banner {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  border: 1px solid var(--card-border);
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 16px; /* Efecto zoom out */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Banner completo sin recortar */
+  object-position: center;
+  display: block;
+}
+
+.guide-header {
+  margin-bottom: 30px;
+}
+
+.guide-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.v-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.guide-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.guide-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   CAJA DE DESCARGA GOOGLE DRIVE
+   ========================================================================== */
+.download-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(52, 168, 83, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 35px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.download-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.download-info p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.dl-btn-gdrive {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--gdrive-green);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #2d9248;
+  box-shadow: 0 4px 14px rgba(52, 168, 83, 0.35);
+  white-space: nowrap;
+}
+
+.dl-btn-gdrive:hover {
+  background-color: var(--gdrive-hover);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 168, 83, 0.5);
+}
+
+.dl-btn-gdrive i {
+  font-size: 1.2rem;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   PASOS DE LAS GUÍAS
+   ========================================================================== */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(0, 242, 254, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.step-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.step-card ul {
+  padding-left: 20px;
+  color: var(--text-main);
+  font-size: 0.92rem;
+}
+
+.step-card ul li {
+  margin-bottom: 8px;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.5);
+  color: #38bdf8;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-family: 'Consolas', monospace;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE (MÓVILES Y NETBOOKS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .download-card { flex-direction: column; align-items: flex-start; }
+  .dl-btn-gdrive { width: 100%; justify-content: center; }
+  .navbar { flex-direction: column; gap: 12px; }
+  .cards-grid { grid-template-columns: 1fr; }
+}

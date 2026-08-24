@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS4 Vue AfterFree & BD-JB | Hackyntosh</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+
+    <header class="guide-header">
+      <div class="guide-title-group">
+        <span class="badge ps">PlayStation 4</span>
+        <span class="v-badge">FW 7.00 - 13.00</span>
+      </div>
+      <h1>PS4: Exploit Vue AfterFree, BD-JB & GoldHEN</h1>
+      <p class="guide-subtitle">
+        Guía integral con todos los métodos de instalación: Consolas limpias sin app Vue, consolas previamente hackeadas, alternativas por BD-JB y matriz de compatibilidad por versión de firmware.
+      </p>
+    </header>
+
+    <!-- Caja de Descarga GOOGLE DRIVE -->
+    <div class="download-card">
+      <div class="download-info">
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Completo Vue AfterFree + Payloads en Drive</h3>
+        <p>Incluye VueSystemBackup.7z, VueLite, SaveData CUSA00960, GoldHEN y herramientas de inyección.</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+        <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
+      </a>
+    </div>
+
+    <!-- Matriz de Compatibilidad por Firmware -->
+    <section class="info-section">
+      <h2><i class="fa-solid fa-microchip"></i> Tabla de Compatibilidad de Firmware</h2>
+      <div class="table-container">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Versión de Firmware</th>
+              <th>Kernel Exploit (Kex)</th>
+              <th>Tasa de Éxito / Estabilidad</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>FW 7.00 - 12.02</strong></td>
+              <td>Lapse Kex</td>
+              <td><span class="status-green">~100% (Muy Alta)</span></td>
+              <td>Totalmente compatible</td>
+            </tr>
+            <tr>
+              <td><strong>FW 12.50 - 13.00</strong></td>
+              <td>NetControl / Poopsploit</td>
+              <td><span class="status-orange">50% - 80% (Media)</span></td>
+              <td>Compatible (Puede requerir reintentos)</td>
+            </tr>
+            <tr>
+              <td><strong>FW 13.02 o Superior</strong></td>
+              <td>Ninguno (Solo Userland)</td>
+              <td><span class="status-red">0% (Incompleto)</span></td>
+              <td>Vue abre pero falta Kernel Exploit. ¡No actualizar!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- RUTA Y ESCENARIOS DE INSTALACIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Seleccioná tu Caso de Instalación</h2>
+
+    <div class="steps-container">
+
+      <!-- CASO 1: Consola Limpia (SIN Hack previo y SIN la App Vue) -->
+      <div class="step-card highlight-card">
+        <span class="step-number">CASO A</span>
+        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Consola Limpia (Sin Hack y Sin App PS Vue)</h3>
+        <p>Si tu PS4 está original y nunca tuviste la app PlayStation Vue instalada comercialmente, este es tu método:</p>
+        <ul>
+          <li><strong>Método 1 (Restauración de Sistema):</strong> Descargá <code>VueSystemBackup.7z</code> (o versión Lite). Descomprimilo en la raíz de un pendrive USB. En la PS4 ve a <strong>Ajustes ➔ Sistema ➔ Copia de seguridad y restauración ➔ Restaurar PS4</strong>. Esto instalará un usuario activado localmente junto con la app PS Vue y sus datos modificados.</li>
+          <li><strong>Método 2 (Extended Storage - Vue 2.0+):</strong> Podés usar el instalador de almacenamiento extendido en USB sin necesidad de formatear ni hacer un restore completo de la consola.</li>
+        </ul>
+      </div>
+
+      <!-- CASO 2: Consola Ya Hackeada Previamente -->
+      <div class="step-card">
+        <span class="step-number">CASO B</span>
+        <h3><i class="fa-solid fa-unlock"></i> Consola Ya Hackeada (PPPwn, WebKit o BD-JB previo)</h3>
+        <p>Si tu consola ya tiene GoldHEN o Homebrew activo mediante otro método:</p>
+        <ul>
+          <li>No necesitas hacer un System Restore. Podés instalar el paquete PKG oficial de la app PS Vue (<code>CUSA00960</code>).</li>
+          <li>Inyectá el SaveData de AfterFree usando <strong>Apollo Save Tool</strong>, transferencia FTP o la función FakeUSB directamente a la ruta de guardados.</li>
+        </ul>
+      </div>
+
+      <!-- CASO 3: Opción Blu-ray BD-JB -->
+      <div class="step-card">
+        <span class="step-number">CASO C</span>
+        <h3><i class="fa-solid fa-compact-disc"></i> ¿Qué pasa si uso BD-JB (Disco Blu-ray)?</h3>
+        <p>El exploit mediante disco Blu-ray grabado (BD-JB) es una alternativa física ideal para FW 7.00 hasta 13.00:</p>
+        <ul>
+          <li>Si no querés usar la app Vue o preferís un arranque por disco físico, grabá la ISO de BD-JB en un disco BD-RE.</li>
+          <li>En <strong>FW 13.00</strong>, BD-JB se puede usar para ejecutar el payload inicial o como método secundario de respaldo si Vue falla.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- PASO A PASO EJECUCIÓN -->
+    <h2 class="section-title"><i class="fa-solid fa-play"></i> Paso a Paso: Ejecución y Uso Diario</h2>
+
+    <div class="steps-container">
+
+      <div class="step-card">
+        <span class="step-number">Paso 01</span>
+        <h3><i class="fa-solid fa-shield-halved"></i> Configuración de Seguridad y DNS</h3>
+        <p>Para evitar que la consola se actualice sola durante el proceso:</p>
+        <ul>
+          <li>Ve a <strong>Ajustes ➔ Sistema ➔ Descargas automáticas</strong> y desmarcá todas las casillas de actualización.</li>
+          <li>En <strong>Red ➔ Configurar conexión a Internet</strong>, seleccioná Personalizado y poné en DNS Primario: <code>62.210.38.117</code> (Nomadic DNS) o <code>127.0.0.2</code> (Bloqueo local).</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 02</span>
+        <h3><i class="fa-solid fa-usb"></i> Primer Arranque con USB (Solo 1ª Vez)</h3>
+        <p>Preparación e inyección inicial de GoldHEN.</p>
+        <ul>
+          <li>Copiá el archivo <code>goldhen.bin</code> en la raíz de un pendrive USB formateado en exFAT.</li>
+          <li>Conectá el USB a la PS4 y abrí la aplicación <strong>PlayStation Vue</strong>.</li>
+          <li>Aceptá la advertencia de PSN haciendo clic en OK. El exploit se ejecutará y copiará automáticamente <code>goldhen.bin</code> a la memoria interna (<code>/data/</code>) de la consola.</li>
+          <li><strong>¡A partir de este momento, ya NO necesitás conectar el USB nunca más!</strong></li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 03</span>
+        <h3><i class="fa-solid fa-gears"></i> Auto-Jailbreak y Carga de Paquetes</h3>
+        <p>Automatización de GoldHEN y uso de PKGs.</p>
+        <ul>
+          <li>Podés configurar el <strong>Autoloader / Auto-close</strong> en el menú de Vue para que el exploit se cierre solo a los pocos segundos tras cargar GoldHEN.</li>
+          <li>Ingresá a <strong>Ajustes ➔ GoldHEN ➔ Debug Settings ➔ Package Installer</strong> para instalar tus juegos y aplicaciones en formato <code>.pkg</code>.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- PREGUNTAS FRECUENTES / CASOS DE BORRADO -->
+    <section class="info-section">
+      <h2><i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>¿Se puede usar Vue AfterFree sin pendrive USB?</h4>
+          <p>Sí. El pendrive solo hace falta la primera vez para pasar el payload <code>goldhen.bin</code> al almacenamiento interno de la PS4 (<code>/data/</code>). Luego podés desenchufarlo para siempre.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Qué hago si sufro Kernel Panic (Apagón de la consola)?</h4>
+          <p>En versiones 12.50 - 13.00, la estabilidad ronda el 60-80%. Si la consola se apaga de golpe, desenchufala unos segundos, encendela, dejá que reconstruya la base de datos y reintentá. Si persiste, considerá usar la opción BD-JB.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Qué es NP-Fake-SignIn?</h4>
+          <p>Es un payload opcional que evita que la PS4 te pida iniciar sesión en PSN cada vez que abrís aplicaciones que requieren cuenta en la consola.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

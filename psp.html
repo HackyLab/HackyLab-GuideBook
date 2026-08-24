@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSP ARK-4 & Infinity 2.0 | Hackyntosh</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+
+    <!-- Banner con la foto de la PSP -->
+    <div class="guide-banner">
+      <img src="../img/psp.jpg" alt="PSP Banner">
+    </div>
+
+    <!-- Encabezado de la Guía -->
+    <header class="guide-header">
+      <div class="guide-title-group">
+        <span class="badge ps">PlayStation Portable</span>
+        <span class="v-badge">FW 6.60 / 6.61</span>
+      </div>
+      <h1>PSP: Custom Firmware ARK-4 + Infinity 2.0</h1>
+      <p class="guide-subtitle">
+        Liberación permanente para cualquier modelo de PSP (1000, 2000, 3000, Go y E1000 Street). Permite ejecutar respaldos ISO/CSO, homebrew, emuladores y plugins con cIPL.
+      </p>
+    </header>
+
+    <!-- Caja de Descarga GOOGLE DRIVE -->
+    <div class="download-card">
+      <div class="download-info">
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack PSP ARK-4 + Infinity 2.0 en Google Drive</h3>
+        <p>Servidor Oficial Google Drive (Instaladores de ARK-4, Infinity 2.0, cIPL Flasher y plugins esenciales).</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+        <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
+      </a>
+    </div>
+
+    <!-- Pasos -->
+    <div class="steps-container">
+
+      <!-- PASO 1 -->
+      <div class="step-card">
+        <span class="step-number">Paso 01</span>
+        <h3><i class="fa-solid fa-sd-card"></i> Preparación de la Memoria (Memory Stick / MicroSD)</h3>
+        <p>Formateá la tarjeta de memoria directamente desde el menú de la consola en <strong>Ajustes ➔ Ajustes del sistema ➔ Formatear Memory Stick</strong>.</p>
+        <ul>
+          <li>Conectá la PSP a la PC en Modo USB.</li>
+          <li>Descomprimí el Pack de Google Drive y copiá la carpeta <code>PSP</code> en la raíz de la tarjeta (reemplazando si pide).</li>
+          <li>Ruta necesaria: <code>MS0:/PSP/GAME/ARK_Loader/</code> y <code>MS0:/PSP/GAME/ARK_Installer/</code>.</li>
+        </ul>
+      </div>
+
+      <!-- PASO 2 -->
+      <div class="step-card">
+        <span class="step-number">Paso 02</span>
+        <h3><i class="fa-solid fa-download"></i> Instalación del Custom Firmware ARK-4</h3>
+        <p>Inyección de los archivos de sistema para habilitar las funciones de CFW.</p>
+        <ul>
+          <li>En el XMB de la PSP ve a <strong>Juegos ➔ Memory Stick</strong> y ejecutá <strong>ARK Installer</strong>.</li>
+          <li>Presioná <kbd>X</kbd> para instalar los archivos principales en la memoria.</li>
+          <li>Luego ejecutá <strong>ARK Loader</strong> para activar el entorno Custom Firmware.</li>
+        </ul>
+      </div>
+
+      <!-- PASO 3 -->
+      <div class="step-card">
+        <span class="step-number">Paso 03</span>
+        <h3><i class="fa-solid fa-key"></i> Hacer el Hack Permanente (Infinity 2.0 / cIPL)</h3>
+        <p>Para que el exploit no se borre al apagar la consola por completo:</p>
+        <ul>
+          <li><strong>PSP 1000 y 2000 (Placas liberables):</strong> Ejecutá <code>ARK cIPL Flasher</code> desde el menú de juegos para aplicar el arranque permanente directo en la placa base.</li>
+          <li><strong>PSP 3000, Go y Street (E1000):</strong> Ejecutá <code>Infinity 2.0</code>, presiona <kbd>X</kbd> para instalar, reiniciá la consola, volvé a abrir Infinity, tocá la flecha izquierda y marcá <strong>ARK-4</strong> con <kbd>X</kbd>.</li>
+        </ul>
+      </div>
+
+      <!-- PASO 4 -->
+      <div class="step-card">
+        <span class="step-number">Paso 04</span>
+        <h3><i class="fa-solid fa-gamepad"></i> Carga de Juegos ISO/CSO y Emuladores</h3>
+        <p>Estructura de carpetas para guardar tu contenido:</p>
+        <ul>
+          <li><strong>Juegos de PSP (ISO/CSO):</strong> Guardalos en la carpeta <code>ISO</code> en la raíz de la memoria (ejemplo: <code>MS0:/ISO/Juego.iso</code>).</li>
+          <li><strong>Juegos de PSX (PS1) y Emuladores:</strong> Van dentro de <code>MS0:/PSP/GAME/NombreDelJuego/EBOOT.PBP</code>.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

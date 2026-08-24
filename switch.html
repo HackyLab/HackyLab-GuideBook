@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nintendo Switch Atmosphère & Hekate | Hackyntosh</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+
+    <header class="guide-header">
+      <div class="guide-title-group">
+        <span class="badge nintendo">Nintendo Switch</span>
+        <span class="v-badge">Todos los Modelos</span>
+      </div>
+      <h1>Nintendo Switch: Atmosphère + Hekate + EmuMMC</h1>
+      <p class="guide-subtitle">
+        Liberación mediante software (Modo RCM en V1 vulnerables) o hardware (Modchip Picofly / HWFLY en V2, Lite y OLED). Configuración de EmuNAND independiente, bloqueo de servidores de Nintendo y gestor DBI.
+      </p>
+    </header>
+
+    <!-- Caja de Descarga GOOGLE DRIVE -->
+    <div class="download-card">
+      <div class="download-info">
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Switch Atmosphère AIO en Google Drive</h3>
+        <p>Servidor Oficial Google Drive (Atmosphère, Hekate, sys-patch, DBI Installer, TegraRCMGUI y hekate_kipse.ini configurado).</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+        <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
+      </a>
+    </div>
+
+    <!-- Pasos -->
+    <div class="steps-container">
+
+      <div class="step-card">
+        <span class="step-number">Paso 01</span>
+        <h3><i class="fa-solid fa-sd-card"></i> Preparación de la Tarjeta MicroSD</h3>
+        <p>Formateo e inyección de la estructura de archivos AIO:</p>
+        <ul>
+          <li>Formateá la tarjeta MicroSD (64GB o superior recomendados) en sistema <strong>FAT32</strong> con GUIFormat.</li>
+          <li>Extraé el contenido del Pack AIO en la raíz de la MicroSD (carpetas <code>atmosphere</code>, <code>bootloader</code>, <code>switch</code> y archivos <code>payload.bin</code>).</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 02</span>
+        <h3><i class="fa-solid fa-shield-halved"></i> Backup de SysNAND (NAND Original)</h3>
+        <p>Creación de la copia de seguridad imprescindible en Hekate ante cualquier eventualidad:</p>
+        <ul>
+          <li>Iniciá Hekate (vía RCM con TegraRCMGUI / RCM Loader en V1 o encendido directo en consolas con Modchip).</li>
+          <li>Ingresá a <strong>Tools ➔ Backup eMMC</strong> y realizá el respaldo de <code>eMMC BOOT0/1</code> y <code>eMMC RAW GPP</code>.</li>
+          <li>Guardá la carpeta <code>backup</code> generada en la SD a resguardo en tu PC.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 03</span>
+        <h3><i class="fa-solid fa-clone"></i> Creación de EmuMMC (EmuNAND) y DNS Mitm</h3>
+        <p>Aislamiento del sistema liberado para evitar baneos de consola:</p>
+        <ul>
+          <li>En Hekate, andá a <strong>EmuMMC ➔ Create EmuMMC ➔ SD Partition</strong> para dividir la memoria y clonar tu sistema.</li>
+          <li>Verificá que el archivo <code>emummc.txt</code> esté presente en <code>/atmosphere/hosts/</code> para bloquear las conexiones a los servidores de telemetría de Nintendo.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 04</span>
+        <h3><i class="fa-solid fa-download"></i> Instalación de Juegos (NSP/XCI) con DBI</h3>
+        <p>Carga masiva de respaldos conectando la consola a la PC:</p>
+        <ul>
+          <li>Iniciá la consola en el perfil <strong>Atmosphère EmuMMC</strong>.</li>
+          <li>Abrí la aplicación <strong>DBI</strong> desde el menú Homebrew y seleccioná <strong>Run MTP Responder</strong>.</li>
+          <li>Conectá el cable USB-C a la PC y arrastrá tus archivos <code>.nsp</code>, <code>.xci</code> o <code>.nsz</code> directamente a la unidad virtual <code>SD Card Install</code>.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+</body>
+</html>

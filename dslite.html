@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nintendo DS Lite R4 & YSMenu | Hackyntosh</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+
+    <header class="guide-header">
+      <div class="guide-title-group">
+        <span class="badge nintendo">Nintendo DS / DS Lite</span>
+        <span class="v-badge">Flashcards / R4</span>
+      </div>
+      <h1>Nintendo DS Lite: Flashcards R4, Wood Kernel & YSMenu</h1>
+      <p class="guide-subtitle">
+        Configuración de tarjetas R4 (R4i Gold, Dual Core, SDHC), eliminación de Timebomb (bomba de tiempo) e instalación del Kernel YSMenu / Wood R4.
+      </p>
+    </header>
+
+    <!-- Caja de Descarga GOOGLE DRIVE -->
+    <div class="download-card">
+      <div class="download-info">
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack R4 Kernels & YSMenu en Google Drive</h3>
+        <p>Servidor Oficial Google Drive (Kernels Wood R4, YSMenu multi-card, parches anti-Timebomb y emuladores).</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+        <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
+      </a>
+    </div>
+
+    <!-- Pasos -->
+    <div class="steps-container">
+
+      <div class="step-card">
+        <span class="step-number">Paso 01</span>
+        <h3><i class="fa-solid fa-sd-card"></i> Formateo e Identificación de la MicroSD</h3>
+        <p>Preparación limpia de la tarjeta MicroSD para la Flashcard.</p>
+        <ul>
+          <li>Formateá la MicroSD (hasta 32GB) en formato <strong>FAT32</strong> usando <strong>SD Card Formatter</strong> o GUIFormat (clúster 32KB).</li>
+          <li>Identificá el modelo o la dirección web impresa en la etiqueta de tu R4 (ej: <code>r4isdhc.com</code>, <code>r4i-sdhc.com</code>, Wood R4).</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 02</span>
+        <h3><i class="fa-solid fa-folder-tree"></i> Instalación del Kernel (Wood R4 / YSMenu)</h3>
+        <p>Copia del firmware operativo para evitar pantallas colgadas en "Loading":</p>
+        <ul>
+          <li>Descomprimí el Pack de Google Drive correspondiente a tu modelo de tarjeta.</li>
+          <li>Copiá la carpeta <code>_rpg</code> (o <code>YSMenu</code>) y los archivos <code>_DS_MENU.DAT</code> / <code>boot.nds</code> directamente en la raíz de la MicroSD.</li>
+          <li>Si tu tarjeta tiene bomba de tiempo (Timebomb error), instalá <strong>YSMenu</strong> como kernel primario para anular el bloqueo.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 03</span>
+        <h3><i class="fa-solid fa-gamepad"></i> Organización de ROMs y Emuladores</h3>
+        <p>Carga de respaldos de juegos en la tarjeta:</p>
+        <ul>
+          <li>Creá una carpeta llamada <code>Juegos</code> o <code>NDS</code> en la raíz y copiá allí tus archivos <code>.nds</code>.</li>
+          <li>Podés agregar emuladores para DS Lite en la raíz (ej. Game Boy / GBC con <code>LameBoy.nds</code>, NES, Sega Master System).</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 04</span>
+        <h3><i class="fa-solid fa-clock"></i> Solución a Errores y Timebomb</h3>
+        <p>Consejos si la tarjeta no arranca o salta fecha vencida:</p>
+        <ul>
+          <li>Si salta el error "Menu?" o pantalla en blanco, verifica que los archivos del Kernel estén en la raíz y no dentro de una carpeta contenedora.</li>
+          <li>Si salta aviso de firmware expirado, cambiá el año de la consola en ajustes a 2010 o usá el Kernel YSMenu para desactivar la Timebomb de forma definitiva.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+</body>
+</html>

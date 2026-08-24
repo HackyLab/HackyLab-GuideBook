@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nintendo DSi Unlaunch | Hackyntosh</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <main class="main-layout">
+    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+
+    <header class="guide-header">
+      <div class="guide-title-group">
+        <span class="badge nintendo">Nintendo DSi</span>
+        <span class="v-badge">Todas las Versiones</span>
+      </div>
+      <h1>Nintendo DSi: Memory Pit + Unlaunch + TWiLight Menu++</h1>
+      <p class="guide-subtitle">
+        Liberación mediante exploit de la app Cámara DSi, instalación de Unlaunch para arranque permanente sin cartucho y ejecutor de ROMs DS/GBA con TWiLight Menu++.
+      </p>
+    </header>
+
+    <!-- Caja de Descarga GOOGLE DRIVE -->
+    <div class="download-card">
+      <div class="download-info">
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack DSi Unlaunch + TWiLight Menu++ en Drive</h3>
+        <p>Servidor Oficial Google Drive (Memory Pit payload, Unlaunch.dsi y última versión de TWiLight Menu++).</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+        <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
+      </a>
+    </div>
+
+    <!-- Pasos -->
+    <div class="steps-container">
+
+      <div class="step-card">
+        <span class="step-number">Paso 01</span>
+        <h3><i class="fa-solid fa-sd-card"></i> Preparación de la Tarjeta SD</h3>
+        <p>Formateá tu tarjeta SD en sistema de archivos <strong>FAT32</strong> (tamaño de clúster 32KB).</p>
+        <ul>
+          <li>Copiá el archivo <code>pit.bin</code> dentro de la ruta <code>/private/ds/app/48415645/</code> en la SD.</li>
+          <li>Descomprimí las carpetas <code>_nds</code>, <code>roms</code> y el archivo <code>BOOT.NDS</code> de TWiLight Menu++ en la raíz.</li>
+          <li>Colocá el instalador <code>UNLAUNCH.DSI</code> en la raíz de la SD.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 02</span>
+        <h3><i class="fa-solid fa-camera"></i> Ejecución del Exploit Memory Pit</h3>
+        <p>Carga inicial de la interfaz desde la Cámara DSi oficial:</p>
+        <ul>
+          <li>Insertá la SD en la consola y encendela.</li>
+          <li>Abrí la aplicación <strong>Cámara Nintendo DSi</strong>.</li>
+          <li>Tocá la opción <strong>Tarjeta SD</strong> en la pantalla superior. La pantalla parpadeará en magenta y cargará automáticamente TWiLight Menu++.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 03</span>
+        <h3><i class="fa-solid fa-bolt"></i> Instalación de Unlaunch (Hack Permanente)</h3>
+        <p>Para encender la consola directamente en TWiLight Menu++ sin entrar a la cámara:</p>
+        <ul>
+          <li>Desde el explorador de TWiLight Menu++, ejecutá <code>UNLAUNCH.DSI</code>.</li>
+          <li>Seleccioná <strong>Install Now</strong> y confirmá presionando <kbd>A</kbd> + <kbd>B</kbd>.</li>
+          <li>En las opciones de arranque (Options), asigná a <code>NO BUTTON</code> la aplicación TWiLight Menu++ para arranque directo.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Paso 04</span>
+        <h3><i class="fa-solid fa-gamepad"></i> Carga de ROMs (DS, GBA, GB, SNES)</h3>
+        <p>Estructura para guardar tus juegos:</p>
+        <ul>
+          <li>Guarda las ROMs de Nintendo DS en <code>/roms/nds/</code>.</li>
+          <li>Las ROMs de Game Boy Advance van en <code>/roms/gba/</code> (se ejecutan de forma nativa vía GBARunner2).</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+</body>
+</html>
