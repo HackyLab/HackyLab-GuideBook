@@ -593,3 +593,85 @@ code {
   .navbar { flex-direction: column; gap: 12px; }
   .cards-grid { grid-template-columns: 1fr; }
 }
+/* ==========================================
+   Estilos de Tablas Cyberpunk / Neón
+   ========================================== */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: rgba(18, 22, 36, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #e0e6ed;
+  white-space: nowrap;
+}
+
+.custom-table thead tr {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 2px solid rgba(0, 242, 254, 0.3);
+}
+
+.custom-table th {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: #00f2fe;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+}
+
+.custom-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background: rgba(0, 242, 254, 0.04);
+}
+
+.custom-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Badges de Estado */
+.status-pill {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.status-pill.success {
+  background: rgba(46, 213, 115, 0.15);
+  color: #2ed573;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+}
+
+.status-pill.warning {
+  background: rgba(255, 171, 0, 0.15);
+  color: #ffab00;
+  border: 1px solid rgba(255, 171, 0, 0.3);
+}
+
+.status-pill.danger {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}

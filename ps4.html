@@ -40,41 +40,40 @@
       </a>
     </div>
 
-    <!-- Matriz de Compatibilidad por Firmware -->
-    <section class="info-section">
-      <h2><i class="fa-solid fa-microchip"></i> Tabla de Compatibilidad de Firmware</h2>
-      <div class="table-container">
-        <table class="tech-table">
-          <thead>
-            <tr>
-              <th>Versión de Firmware</th>
-              <th>Kernel Exploit (Kex)</th>
-              <th>Tasa de Éxito / Estabilidad</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>FW 7.00 - 12.02</strong></td>
-              <td>Lapse Kex</td>
-              <td><span class="status-green">~100% (Muy Alta)</span></td>
-              <td>Totalmente compatible</td>
-            </tr>
-            <tr>
-              <td><strong>FW 12.50 - 13.00</strong></td>
-              <td>NetControl / Poopsploit</td>
-              <td><span class="status-orange">50% - 80% (Media)</span></td>
-              <td>Compatible (Puede requerir reintentos)</td>
-            </tr>
-            <tr>
-              <td><strong>FW 13.02 o Superior</strong></td>
-              <td>Ninguno (Solo Userland)</td>
-              <td><span class="status-red">0% (Incompleto)</span></td>
-              <td>Vue abre pero falta Kernel Exploit. ¡No actualizar!</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <h3><i class="fa-solid fa-microchip"></i> Tabla de Compatibilidad de Firmware</h3>
+
+<div class="table-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Versión de Firmware</th>
+        <th>Kernel Exploit (Kex)</th>
+        <th>Tasa de Éxito / Estabilidad</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>FW 7.00 - 12.02</strong></td>
+        <td>Lapse Kex</td>
+        <td>~100% (Muy Alta)</td>
+        <td><span class="status-pill success">Totalmente compatible</span></td>
+      </tr>
+      <tr>
+        <td><strong>FW 12.50 - 13.00</strong></td>
+        <td>NetControl / Poopsploit</td>
+        <td>50% - 80% (Media)</td>
+        <td><span class="status-pill warning">Compatible (Reintentos)</span></td>
+      </tr>
+      <tr>
+        <td><strong>FW 13.02 o Superior</strong></td>
+        <td>Ninguno (Solo Userland)</td>
+        <td>0% (Incompleto)</td>
+        <td><span class="status-pill danger">¡No actualizar!</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     </section>
 
     <!-- RUTA Y ESCENARIOS DE INSTALACIÓN -->
