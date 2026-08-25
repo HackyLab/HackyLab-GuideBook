@@ -61,40 +61,57 @@
         </a>
       </div>
 
-      <!-- Botón Toggle para la Vista Opcional (About Me) -->
-      <button class="about-toggle-btn" id="aboutToggleBtn" type="button">
-        <i class="fa-solid fa-user-ninja"></i> 
-        <span>SOBRE EL LAB // MI HISTORIA ⚡</span>
-        <i class="fa-solid fa-chevron-down toggle-icon" id="toggleIcon"></i>
-      </button>
-
-      <!-- Panel Desplegable Vista Opcional: About Me -->
-      <div class="about-drawer" id="aboutDrawer">
+      <!-- Panel Permanente: About Me / Historia del Lab -->
+      <div class="about-card-static">
         <div class="about-card-inner">
           <div class="about-header">
             <div class="about-avatar">
               <i class="fa-solid fa-microchip"></i>
             </div>
             <div class="about-title-text">
-              <h3>DOCUMENTACIÓN INDEPENDIENTE & SOFTWARE 🛠️</h3>
+              <h3>SOBRE EL LAB & DESARROLLO INDEPENDIENTE 🛠️⚡</h3>
               <span class="about-subtitle">Preservación de hardware, softmod limpio & cero acortadores</span>
             </div>
           </div>
 
           <div class="about-body">
             <p>
-              ¡Buenas! Soy <strong>Hackyntosh</strong> 💻. Tengo 15 años y me apasiona el mundo de la tecnología, la microsoldadura 🛠️ y, especialmente, el desarrollo de software.
+              ¡Buenas! Soy <strong>Hackyntosh</strong> 💻. Tengo 15 años y enfoco mi futuro en la tecnología, especializado principalmente en <strong>desarrollo de software</strong> y apasionado por la <strong>microsoldadura y el modding de hardware</strong> 🛠️🔥.
             </p>
             <p>
-              Este sitio nació por una frustración personal muy clara: cansado de comerme videos de 15 minutos llenos de relleno 🎬, enlaces con acortadores invasivos y guías desactualizadas solo para liberar una consola. Creé este laboratorio para <strong>ir directo al grano</strong>: tutoriales claros, descargas directas y packs totalmente funcionales testeados por mí B) ⚡.
+              Este laboratorio nació por una frustración personal: cansado de ver siempre lo mismo en internet —tutoriales con 15 minutos de relleno infumable 🎬, enlaces plagados de acortadores abusivos y guías desactualizadas solo para liberar una consola—. Decidí crear mi propio espacio para <strong>ir directo al grano</strong>: sin vueltas, fácil de entender y con cargas directas ⚡.
             </p>
             <p>
-              Todo el material recopilado es <strong>Open Source</strong> 📂. Recompilo y ajusto los archivos de diversos creadores para armar las versiones más completas y de fácil instalación. No me gusta meter marcas de agua ni skins molestas en las herramientas; mi firma solo aparece como crédito en el <code>README.txt</code> por si otros creadores quieren reutilizarlos 🤝.
+              Acá vas a encontrar una recopilación de archivos de varios creadores para armar los packs más completos y funcionales, todos <strong>testeados por mí B)</strong> y modificados para que su instalación sea rápida y transparente. Todo este proyecto es <strong>Open Source</strong> 📂. No me gusta meterle marcas de agua ni skins personalizadas a los programas; mi firma solo la vas a ver en el <code>README.txt</code> por si otros creadores quieren usar los packs (¡solo pido créditos si los reutilizan! 🤝).
             </p>
             <p>
-              Como sigo en la secundaria 📚, respondo mensajes y dudas en Discord durante mis tiempos libres. Me encanta brindar atención personalizada por privado, así que no dudes en escribirme. ¡Gracias a todos por visitar y apoyar la web! 🚀
+              Al estar en la secundaria 📚, atiendo dudas y ayudo en el servidor de Discord durante mis tiempos libres. Me copan bastante las charlas y dar atención personalizada por privado 💬, así que si tenés algún problema con un procedimiento, escribime con confianza. ¡Gracias a todos de antemano por pasar por la web! 🚀🎮
             </p>
           </div>
+        </div>
+      </div>
+
+      <!-- Banner de Consolas Recientemente Agregadas / Actualizaciones -->
+      <div class="recent-updates-banner">
+        <div class="updates-badge">
+          <i class="fa-solid fa-fire"></i> RECIÉN AGREGADAS & ACTUALIZADAS
+        </div>
+        <div class="updates-list">
+          <a href="ps4.html" class="update-chip">
+            <span class="chip-tag ps">PS4</span>
+            <span class="chip-text">GoldHEN VUE After Free 7.00 - 13.00</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+          <a href="switch.html" class="update-chip">
+            <span class="chip-tag nintendo">Switch</span>
+            <span class="chip-text">Atmosphère + Hekate</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+          <a href="xbox360.html" class="update-chip">
+            <span class="chip-tag xbox">Xbox 360</span>
+            <span class="chip-text">BadUpdate Avatar Softmod</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
         </div>
       </div>
 
@@ -435,7 +452,7 @@
 
   </main>
 
-  <!-- Filter, Search, Keyboard Shortcut, DevMode & About Toggle Script -->
+  <!-- Script Simplificado (Búsqueda, Filtros y DevMode) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const searchInput = document.getElementById('searchInput');
@@ -445,22 +462,10 @@
       const statusText = document.getElementById('statusText');
       const totalGuidesCount = document.getElementById('totalGuidesCount');
 
-      // Elementos Toggle About Me
-      const aboutToggleBtn = document.getElementById('aboutToggleBtn');
-      const aboutDrawer = document.getElementById('aboutDrawer');
-      const toggleIcon = document.getElementById('toggleIcon');
-
       let currentFilter = 'all';
       let isDevMode = false;
 
-      // Actualizar contador total dinámicamente
       totalGuidesCount.textContent = cards.length;
-
-      // Toggle Desplegable About Me
-      aboutToggleBtn.addEventListener('click', () => {
-        aboutDrawer.classList.toggle('active');
-        aboutToggleBtn.classList.toggle('open');
-      });
 
       // Filtro por Categorías
       filterBtns.forEach(btn => {
@@ -472,10 +477,10 @@
         });
       });
 
-      // Filtro por Búsqueda
+      // Búsqueda
       searchInput.addEventListener('input', filterCards);
 
-      // Atajo de teclado: Tecla '/' para enfocar búsqueda instantánea
+      // Atajo Teclado '/'
       document.addEventListener('keydown', (e) => {
         if (e.key === '/' && document.activeElement !== searchInput) {
           e.preventDefault();
@@ -507,13 +512,13 @@
         isDevMode = !isDevMode;
         if (isDevMode) {
           statusText.textContent = "DEV MODE: ACTIVE";
-          devToggle.style.borderColor = "var(--accent-cyan)";
-          devToggle.style.color = "var(--accent-cyan)";
+          devToggle.style.borderColor = "var(--accent-cyan, #00f3ff)";
+          devToggle.style.color = "var(--accent-cyan, #00f3ff)";
           devToggle.style.boxShadow = "0 0 12px rgba(0, 243, 255, 0.3)";
         } else {
           statusText.textContent = "Google Drive Direct";
           devToggle.style.borderColor = "rgba(255, 255, 255, 0.08)";
-          devToggle.style.color = "var(--text-muted)";
+          devToggle.style.color = "var(--text-muted, #8f92a1)";
           devToggle.style.boxShadow = "none";
         }
       });
