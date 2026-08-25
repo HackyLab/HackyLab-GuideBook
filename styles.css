@@ -869,3 +869,168 @@ code {
   margin-top: 5px;
   opacity: 0.6;
 }
+/* ==========================================================================
+   BANNER DISCORD PERMANENTE + ABOUT ME DESPLEGABLE
+   ========================================================================== */
+
+/* Banner Discord Visible Siempre */
+.community-banner-always {
+  margin: 22px auto 14px auto;
+  padding: 16px 22px;
+  background: rgba(88, 101, 242, 0.12);
+  border: 1px solid rgba(88, 101, 242, 0.4);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(88, 101, 242, 0.15);
+  text-align: left;
+}
+
+.community-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.community-icon {
+  font-size: 2.2rem;
+  color: #5865F2;
+  filter: drop-shadow(0 0 8px rgba(88, 101, 242, 0.5));
+}
+
+.community-info h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.community-info p {
+  margin: 3px 0 0 0;
+  font-size: 0.83rem;
+  color: #a0a5b5;
+}
+
+.btn-community {
+  background: #5865F2;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 12px rgba(88, 101, 242, 0.3);
+}
+
+.btn-community:hover {
+  background: #4752C4;
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(88, 101, 242, 0.6);
+}
+
+/* Botón Toggle About Me */
+.about-toggle-btn {
+  margin: 6px auto 10px auto;
+  background: rgba(0, 243, 255, 0.05);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  color: var(--accent-cyan, #00f3ff);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.about-toggle-btn:hover {
+  background: rgba(0, 243, 255, 0.15);
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.25);
+}
+
+.about-toggle-btn .toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.about-toggle-btn.open .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Drawer / Bio Desplegable */
+.about-drawer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin 0.3s ease;
+  margin-top: 0;
+  text-align: left;
+}
+
+.about-drawer.active {
+  max-height: 700px;
+  opacity: 1;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.about-card-inner {
+  background: rgba(17, 19, 31, 0.8);
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(12px);
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.about-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(0, 243, 255, 0.1);
+  border: 1px solid var(--accent-cyan, #00f3ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--accent-cyan, #00f3ff);
+}
+
+.about-title-text h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.about-subtitle {
+  font-size: 0.78rem;
+  color: #8f92a1;
+}
+
+.about-body p {
+  color: #c4c7d5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
+}

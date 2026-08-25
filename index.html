@@ -42,10 +42,61 @@
       <div class="hero-tag">
         <i class="fa-solid fa-bolt"></i> DOCUMENTACIÓN TÉCNICA Y SOFTMOD
       </div>
-      <h1>HACKYNTOSH <span class="glitch-text">HUD</span></h1>
+      <h1>HACKYNTOSH <span class="glitch-text">LAB</span></h1>
       <p>
         Repositorio directo de exploits, payload injection y guías sin acortadores ni adware.
       </p>
+
+      <!-- Banner Comunidad Discord (SIEMPRE VISIBLE) -->
+      <div class="community-banner-always">
+        <div class="community-info">
+          <i class="fa-brands fa-discord community-icon"></i>
+          <div>
+            <h4>¿Dudas técnicas, problemas o querés aportar? 🎮</h4>
+            <p>Canales organizados por consola y soporte personalizado en mis tiempos libres de la escuela 📚</p>
+          </div>
+        </div>
+        <a href="https://discord.gg/TU_LINK_AQUI" target="_blank" class="btn-community" rel="noopener noreferrer">
+          <i class="fa-brands fa-discord"></i> Entrar al Discord
+        </a>
+      </div>
+
+      <!-- Botón Toggle para la Vista Opcional (About Me) -->
+      <button class="about-toggle-btn" id="aboutToggleBtn" type="button">
+        <i class="fa-solid fa-user-ninja"></i> 
+        <span>SOBRE EL LAB // MI HISTORIA ⚡</span>
+        <i class="fa-solid fa-chevron-down toggle-icon" id="toggleIcon"></i>
+      </button>
+
+      <!-- Panel Desplegable Vista Opcional: About Me -->
+      <div class="about-drawer" id="aboutDrawer">
+        <div class="about-card-inner">
+          <div class="about-header">
+            <div class="about-avatar">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="about-title-text">
+              <h3>DOCUMENTACIÓN INDEPENDIENTE & SOFTWARE 🛠️</h3>
+              <span class="about-subtitle">Preservación de hardware, softmod limpio & cero acortadores</span>
+            </div>
+          </div>
+
+          <div class="about-body">
+            <p>
+              ¡Buenas! Soy <strong>Hackyntosh</strong> 💻. Tengo 15 años y me apasiona el mundo de la tecnología, la microsoldadura 🛠️ y, especialmente, el desarrollo de software.
+            </p>
+            <p>
+              Este sitio nació por una frustración personal muy clara: cansado de comerme videos de 15 minutos llenos de relleno 🎬, enlaces con acortadores invasivos y guías desactualizadas solo para liberar una consola. Creé este laboratorio para <strong>ir directo al grano</strong>: tutoriales claros, descargas directas y packs totalmente funcionales testeados por mí B) ⚡.
+            </p>
+            <p>
+              Todo el material recopilado es <strong>Open Source</strong> 📂. Recompilo y ajusto los archivos de diversos creadores para armar las versiones más completas y de fácil instalación. No me gusta meter marcas de agua ni skins molestas en las herramientas; mi firma solo aparece como crédito en el <code>README.txt</code> por si otros creadores quieren reutilizarlos 🤝.
+            </p>
+            <p>
+              Como sigo en la secundaria 📚, respondo mensajes y dudas en Discord durante mis tiempos libres. Me encanta brindar atención personalizada por privado, así que no dudes en escribirme. ¡Gracias a todos por visitar y apoyar la web! 🚀
+            </p>
+          </div>
+        </div>
+      </div>
 
       <!-- Stats Bar Quick Overview -->
       <div class="hero-stats">
@@ -384,7 +435,7 @@
 
   </main>
 
-  <!-- Filter, Search, Keyboard Shortcut & DevMode Script -->
+  <!-- Filter, Search, Keyboard Shortcut, DevMode & About Toggle Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const searchInput = document.getElementById('searchInput');
@@ -394,11 +445,22 @@
       const statusText = document.getElementById('statusText');
       const totalGuidesCount = document.getElementById('totalGuidesCount');
 
+      // Elementos Toggle About Me
+      const aboutToggleBtn = document.getElementById('aboutToggleBtn');
+      const aboutDrawer = document.getElementById('aboutDrawer');
+      const toggleIcon = document.getElementById('toggleIcon');
+
       let currentFilter = 'all';
       let isDevMode = false;
 
       // Actualizar contador total dinámicamente
       totalGuidesCount.textContent = cards.length;
+
+      // Toggle Desplegable About Me
+      aboutToggleBtn.addEventListener('click', () => {
+        aboutDrawer.classList.toggle('active');
+        aboutToggleBtn.classList.toggle('open');
+      });
 
       // Filtro por Categorías
       filterBtns.forEach(btn => {
