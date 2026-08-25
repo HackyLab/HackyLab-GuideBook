@@ -18,40 +18,65 @@
 
   <main class="main-layout">
 
-    <!-- Navbar -->
+    <!-- Navbar Sticky con Glassmorphism -->
     <nav class="navbar">
       <a href="index.html" class="brand">
         <i class="fa-solid fa-terminal brand-icon"></i>
         <span class="brand-title">HACKYNTOSH</span>
-        <span class="brand-version">v2.1</span>
+        <span class="brand-version">v2.5</span>
       </a>
-      <div class="status-pill">
+
+      <div class="nav-links">
+        <a href="#cardsGrid" class="nav-item"><i class="fa-solid fa-gamepad"></i> Consolas</a>
+        <a href="pctools.html" class="nav-item"><i class="fa-solid fa-wrench"></i> Herramientas</a>
+      </div>
+
+      <div class="status-pill" id="devModeToggle" title="Click para alternar Modo Dev">
         <span class="status-dot"></span>
-        <span>Google Drive Direct</span>
+        <span id="statusText">Google Drive Direct</span>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Estadísticas HUD -->
     <header class="hero">
       <div class="hero-tag">
-        <i class="fa-solid fa-bolt"></i> GUÍAS DE LIBERACIÓN & SOFTMOD
+        <i class="fa-solid fa-bolt"></i> DOCUMENTACIÓN TÉCNICA Y SOFTMOD
       </div>
-      <h1>Hackyntosh</h1>
+      <h1>HACKYNTOSH <span class="glitch-text">HUD</span></h1>
       <p>
-        Documentación técnica directa, estructurada y sin acortadores. Seleccioná tu consola para acceder a la guía.
+        Repositorio directo de exploits, payload injection y guías sin acortadores ni adware.
       </p>
+
+      <!-- Stats Bar Quick Overview -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" id="totalGuidesCount">12</span>
+          <span class="stat-label">Sistemas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Direct Drive</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Acortadores</span>
+        </div>
+      </div>
     </header>
 
-    <!-- Búsqueda y Filtros -->
-    <div class="search-filter-box">
+    <!-- Panel de Control Cyberpunk (Búsqueda + Filtros) -->
+    <section class="cyber-control-panel">
       <div class="search-bar">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" id="searchInput" placeholder="Buscar consola o guía (ej. PS3, Switch, RGH)...">
+        <i class="fa-solid fa-terminal search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar consola, firmware o exploit (Presioná '/' para buscar)...">
+        <kbd class="search-shortcut">/</kbd>
       </div>
 
       <div class="filter-pills">
         <button class="filter-btn active" data-filter="all">
-          <i class="fa-solid fa-border-all"></i> Todo
+          <i class="fa-solid fa-border-all"></i> Todos
         </button>
         <button class="filter-btn" data-filter="playstation">
           <i class="fa-brands fa-playstation"></i> PlayStation
@@ -66,9 +91,9 @@
           <i class="fa-solid fa-toolbox"></i> Herramientas
         </button>
       </div>
-    </div>
+    </section>
 
-    <!-- Grilla de Consolas -->
+    <!-- Grilla de Consolas y Guías -->
     <div class="cards-grid" id="cardsGrid">
 
       <!-- PS3 -->
@@ -76,12 +101,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/ps3.jpg" alt="PlayStation 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PS3</span>
           </div>
           <div class="card-content">
             <h3>PS3 HEN 4.91 / CFW</h3>
             <p>Instalación de Firmware Híbrido (HFW) + HEN en consolas Fat, Slim y SuperSlim.</p>
+            <div class="micro-tags">
+              <span class="tag">HFW 4.91</span>
+              <span class="tag">Evilnat</span>
+              <span class="tag">webMAN</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -95,12 +124,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/ps4.jpg" alt="PlayStation 4" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PS4</span>
           </div>
           <div class="card-content">
-            <h3>PS4 VUE GoldHEN (7.00 / 13.00)</h3>
-            <p>Exploit VUE After Free (7.00 - 13.00), carga de PKGs y parches.</p>
+            <h3>PS4 GoldHEN VUE After Free 7.00 - 13.00 </h3>
+            <p>Exploit Kernel (9.00 - 11.00), carga de PKGs y configuración de payloads.</p>
+            <div class="micro-tags">
+              <span class="tag">FW 11.00</span>
+              <span class="tag">PPPwn</span>
+              <span class="tag">GoldHEN</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -114,12 +147,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/psp.jpg" alt="PSP" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PSP</span>
           </div>
           <div class="card-content">
             <h3>PSP ARK-4 CFW 6.61</h3>
-            <p>Parche permanente Infinity 2.0 y soporte POPS para juegos de PS1.</p>
+            <p>Parche permanente Infinity 2.0 y soporte POPS para ejecucion de PS1.</p>
+            <div class="micro-tags">
+              <span class="tag">ARK-4</span>
+              <span class="tag">Infinity 2.0</span>
+              <span class="tag">POPS</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -133,12 +170,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/ps2.jpg" alt="PlayStation 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge ps card-badge-top">PS2</span>
           </div>
           <div class="card-content">
             <h3>PS2 FreeMcBoot / OPL</h3>
             <p>Carga de juegos desde USB, HDD, Red SMB o adaptador SD MX4SIO.</p>
+            <div class="micro-tags">
+              <span class="tag">FMCB</span>
+              <span class="tag">OPL v1.2</span>
+              <span class="tag">MX4SIO</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -152,12 +193,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/switch.jpg" alt="Nintendo Switch" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">Switch</span>
           </div>
           <div class="card-content">
             <h3>Switch Atmosphere & Hekate</h3>
             <p>Inyección de Payloads, creación de emuMMC aislada y protección anti-baneos.</p>
+            <div class="micro-tags">
+              <span class="tag">Atmosphère</span>
+              <span class="tag">Hekate</span>
+              <span class="tag">Picofly</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -171,12 +216,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/wii.jpg" alt="Nintendo Wii" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">Wii</span>
           </div>
           <div class="card-content">
             <h3>Wii Softmod LetterBomb</h3>
             <p>Instalación de Homebrew Channel, protección Priiloader y cIOS d2x.</p>
+            <div class="micro-tags">
+              <span class="tag">LetterBomb</span>
+              <span class="tag">Priiloader</span>
+              <span class="tag">cIOS d2x</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -190,12 +239,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/ndsi.jpg" alt="Nintendo DSi" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">DSi</span>
           </div>
           <div class="card-content">
             <h3>DSi Memory Pit & Unlaunch</h3>
             <p>Exploit mediante la cámara, bootloader permanente y TWiLight Menu++.</p>
+            <div class="micro-tags">
+              <span class="tag">Memory Pit</span>
+              <span class="tag">Unlaunch</span>
+              <span class="tag">TWiLight++</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -209,12 +262,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/ndsl.jpg" alt="DS Lite" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge nintendo card-badge-top">DS Lite</span>
           </div>
           <div class="card-content">
             <h3>DS Lite R4 & YSMenu</h3>
             <p>Puesta a punto de flashcards Slot-1 y bypass de timebombs con YSMenu.</p>
+            <div class="micro-tags">
+              <span class="tag">Flashcard</span>
+              <span class="tag">YSMenu</span>
+              <span class="tag">Bypass</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -228,12 +285,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/xbox360.jpg" alt="Xbox 360" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge xbox card-badge-top">Xbox 360</span>
           </div>
           <div class="card-content">
             <h3>Xbox 360 BadUpdate & Aurora</h3>
             <p>Softmod por actualización de avatares, DashLaunch y Dashboard Aurora.</p>
+            <div class="micro-tags">
+              <span class="tag">BadUpdate</span>
+              <span class="tag">Aurora</span>
+              <span class="tag">DashLaunch</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -247,12 +308,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/xbox.jpg" alt="Xbox Clasica" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge xbox card-badge-top">Xbox</span>
           </div>
           <div class="card-content">
             <h3>Xbox Clásica Rocky5</h3>
             <p>Softmod con partidas guardadas, respaldo de EEPROM y UnleashX.</p>
+            <div class="micro-tags">
+              <span class="tag">Rocky5</span>
+              <span class="tag">EEPROM</span>
+              <span class="tag">UnleashX</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -266,12 +331,16 @@
         <div class="card">
           <div class="card-image-wrapper">
             <img src="img/kindle.jpg" alt="Kindle" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
             <span class="badge otros card-badge-top">Kindle</span>
           </div>
           <div class="card-content">
             <h3>Kindle LanguageBreak</h3>
             <p>Jailbreak para eReaders Amazon, lanzador KUAL y lector KOReader para EPUBs.</p>
+            <div class="micro-tags">
+              <span class="tag">LanguageBreak</span>
+              <span class="tag">KOReader</span>
+              <span class="tag">KUAL</span>
+            </div>
             <div class="card-footer">
               <span>Ver Guía Paso a Paso</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -281,18 +350,22 @@
       </a>
 
       <!-- HERRAMIENTAS PC -->
-      <a href="pctools.html" class="guide-card-link" data-category="otros" data-keywords="tools pc guiformat hxd tegrarcmgui rufus herramientas">
-        <div class="card">
+      <a href="pctools.html" class="guide-card-link" data-category="otros" data-keywords="tools pc guiformat hxd tegrarcmgui rufus herramientas dependencias">
+        <div class="card card-highlight">
           <div class="card-image-wrapper">
             <img src="img/pctools.jpg" alt="PC Tools" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%2311131f\'><rect width=\'100%\' height=\'100%\'/></svg>'">
-            <div class="card-image-overlay"></div>
-            <span class="badge otros card-badge-top">Herramientas</span>
+            <span class="badge otros card-badge-top">Essential</span>
           </div>
           <div class="card-content">
             <h3>Toolbox PC Essentials</h3>
-            <p>GUIFormat, HxD Hex Editor, TegraRcmGUI, Rufus y utilidades esenciales.</p>
+            <p>GUIFormat, HxD Hex Editor, TegraRcmGUI, Rufus y dependencias clave para flasheo.</p>
+            <div class="micro-tags">
+              <span class="tag tag-glow">Fat32</span>
+              <span class="tag tag-glow">Payloads</span>
+              <span class="tag tag-glow">Drivers</span>
+            </div>
             <div class="card-footer">
-              <span>Ver Guía Paso a Paso</span>
+              <span>Acceder a Dependencias</span>
               <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
@@ -301,17 +374,33 @@
 
     </div>
 
+    <!-- Terminal Footer -->
+    <footer class="cyber-footer">
+      <div class="footer-content">
+        <p><i class="fa-solid fa-code"></i> HACKYNTOSH ENGINE v2.5 — DEV & HARDWARE LAB</p>
+        <span class="footer-sub">Optimizado para bajas latencias, modding directo y consulta técnica rápido.</span>
+      </div>
+    </footer>
+
   </main>
 
-  <!-- Filter & Search Script -->
+  <!-- Filter, Search, Keyboard Shortcut & DevMode Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const searchInput = document.getElementById('searchInput');
       const filterBtns = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.guide-card-link');
+      const devToggle = document.getElementById('devModeToggle');
+      const statusText = document.getElementById('statusText');
+      const totalGuidesCount = document.getElementById('totalGuidesCount');
 
       let currentFilter = 'all';
+      let isDevMode = false;
 
+      // Actualizar contador total dinámicamente
+      totalGuidesCount.textContent = cards.length;
+
+      // Filtro por Categorías
       filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           filterBtns.forEach(b => b.classList.remove('active'));
@@ -321,7 +410,16 @@
         });
       });
 
+      // Filtro por Búsqueda
       searchInput.addEventListener('input', filterCards);
+
+      // Atajo de teclado: Tecla '/' para enfocar búsqueda instantánea
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== searchInput) {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      });
 
       function filterCards() {
         const query = searchInput.value.toLowerCase().trim();
@@ -341,6 +439,22 @@
           }
         });
       }
+
+      // Toggle Dev Mode
+      devToggle.addEventListener('click', () => {
+        isDevMode = !isDevMode;
+        if (isDevMode) {
+          statusText.textContent = "DEV MODE: ACTIVE";
+          devToggle.style.borderColor = "var(--accent-cyan)";
+          devToggle.style.color = "var(--accent-cyan)";
+          devToggle.style.boxShadow = "0 0 12px rgba(0, 243, 255, 0.3)";
+        } else {
+          statusText.textContent = "Google Drive Direct";
+          devToggle.style.borderColor = "rgba(255, 255, 255, 0.08)";
+          devToggle.style.color = "var(--text-muted)";
+          devToggle.style.boxShadow = "none";
+        }
+      });
     });
   </script>
 </body>
