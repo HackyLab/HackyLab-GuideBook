@@ -18,27 +18,35 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
-    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <!-- Banner de la Consola -->
     <div class="guide-banner">
       <img src="img/xbox360.jpg" alt="Xbox 360 Banner">
     </div>
 
+    <!-- Encabezado de la Guía -->
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge xbox">Xbox 360</span>
         <span class="v-badge">Softmod BadUpdate / BadAvatar</span>
       </div>
-      <h1>Xbox 360: Exploit BadUpdate & BadAvatar + Aurora</h1>
+      <h1>Xbox 360: Exploit BadUpdate & BadAvatar, XeXMenu, DashLaunch & Aurora</h1>
       <p class="guide-subtitle">
-        Liberación por software aprovechando la vulnerabilidad en las actualizaciones de sistema y datos de avatares ($SystemUpdate) para inyectar Homebrew, DashLaunch y el Dashboard Aurora sin soldados ni chips.
+        Liberación por software aprovechando la vulnerabilidad en las actualizaciones de sistema y datos de avatares ($SystemUpdate) para inyectar ejecutable XeXMenu, automatización con DashLaunch v3.21 y gestor gráfico Aurora.
       </p>
+
+      <!-- BADGES DE REQUISITOS Y DIFICULTAD -->
+      <div class="req-badges-container">
+        <span class="req-pill"><i class="fa-solid fa-usb"></i> Pendrive USB (FAT32)</span>
+        <span class="req-pill"><i class="fa-solid fa-hard-drive"></i> Disco Rígido / Memoria Interna</span>
+        <span class="req-pill diff-easy"><i class="fa-solid fa-gauge-high"></i> Dificultad: Muy Fácil</span>
+      </div>
     </header>
 
     <!-- Caja de Descarga GOOGLE DRIVE -->
     <div class="download-card">
       <div class="download-info">
         <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack BadUpdate + BadAvatar en Google Drive</h3>
-        <p>Servidor Oficial Google Drive (Paquete $SystemUpdate modificado, BadAvatar payload, XeXMenu, DashLaunch 3.21 y Aurora 0.7b.2).</p>
+        <p>Servidor Oficial Google Drive (Paquete $SystemUpdate modificado, BadAvatar payload, XeXMenu 1.2, DashLaunch 3.21, Aurora 0.7b.2 y plantillas launch.ini).</p>
       </div>
       <a href="https://drive.google.com/drive/u/2/folders/1pjlOnrlgAljrwMoe1BugOkjauWZhaQeU" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
         <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
@@ -46,7 +54,7 @@
     </div>
 
     <!-- TABLA DE COMPATIBILIDAD -->
-    <h3><i class="fa-solid fa-microchip"></i> Requisitos y Métodos de Carga</h3>
+    <h3><i class="fa-solid fa-microchip"></i> Requisitos y Métodos de Carga por Dashboard</h3>
 
     <div class="table-container">
       <table class="custom-table">
@@ -54,27 +62,27 @@
           <tr>
             <th>Versión de Dashboard</th>
             <th>Método Aplicable</th>
-            <th>Requiere Unidad de Disco / HDD</th>
+            <th>Requisito de Almacenamiento</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Dashboard 2.0.17559.0 (Oficial)</strong></td>
-            <td>BadUpdate ($SystemUpdate Mod)</td>
-            <td>Pendrive FAT32 + Disco/Memoria Interna</td>
+            <td><strong>Dashboard 2.0.17559.0 (Última Oficial)</strong></td>
+            <td>BadUpdate ($SystemUpdate Modificado)</td>
+            <td>USB FAT32 + Disco Rígido o Memoria Flash</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
           <tr>
             <td><strong>Dashboards Anteriores (17511 - 17544)</strong></td>
             <td>BadAvatar / Savegame Payload</td>
-            <td>Pendrive FAT32 con carpetas de Avatares</td>
+            <td>Pendrive FAT32 formateado en la consola</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
           <tr>
-            <td><strong>Consolas con RGH / Hardmod previo</strong></td>
-            <td>DashLaunch Directo / XeXMenu</td>
-            <td>Cualquier almacenamiento reconocido</td>
+            <td><strong>Consolas con RGH / RGH3 / Hardmod previo</strong></td>
+            <td>Arranque Directo xex / XeXMenu</td>
+            <td>Cualquier almacenamiento interno/USB</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
         </tbody>
@@ -86,47 +94,51 @@
 
     <div class="steps-container">
 
+      <!-- PASO 1 -->
       <div class="step-card">
         <span class="step-number">Paso 01</span>
-        <h3><i class="fa-solid fa-usb"></i> Preparación del Pendrive USB (BadUpdate)</h3>
-        <p>Configuración de los paquetes de actualización manipulados:</p>
+        <h3><i class="fa-solid fa-usb"></i> Formateo e Preparación del Almacenamiento USB</h3>
+        <p>Configuración de los paquetes de actualización manipulados y ejecutables:</p>
         <ul>
-          <li>Formateá un pendrive USB en sistema de archivos <strong>FAT32</strong>.</li>
-          <li>Copiá la carpeta contenedora de actualización modificada <code>$SystemUpdate</code> (o <code>$$SystemUpdate</code> según corresponda a tu versión de Dashboard) en la raíz del pendrive.</li>
-          <li>Asegurate de incluir los datos del exploit <strong>BadAvatar</strong> y los ejecutables de <strong>XeXMenu</strong> o <strong>DashLaunch</strong>.</li>
+          <li>Formateá tu pendrive USB en sistema de archivos <strong>FAT32</strong> (usando un tamaño de unidad de asignación de 32KB).</li>
+          <li>Copiá la carpeta contenedora de actualización modificada <code>$SystemUpdate</code> (o <code>$$SystemUpdate</code> para forzar la lectura) en la raíz del pendrive.</li>
+          <li>Extraé las carpetas de <code>XeXMenu</code>, <code>DashLaunch</code> y <code>Aurora</code> directamente en la memoria externa.</li>
         </ul>
       </div>
 
+      <!-- PASO 2 -->
       <div class="step-card">
         <span class="step-number">Paso 02</span>
-        <h3><i class="fa-solid fa-bolt"></i> Disparo del Exploit (Actualización de Avatares)</h3>
-        <p>Ejecución de la vulnerabilidad desde la interfaz oficial:</p>
+        <h3><i class="fa-solid fa-bolt"></i> Disparo del Exploit (Inyección $SystemUpdate / BadAvatar)</h3>
+        <p>Ejecución de la vulnerabilidad en la interfaz oficial de Xbox 360:</p>
         <ul>
-          <li>Conectá el pendrive USB a la Xbox 360 encendida en el Dashboard oficial.</li>
-          <li>Aceptá el aviso emergente que solicita aplicar la actualización de avatares/sistema.</li>
-          <li>El proceso desbordará la memoria e iniciará automáticamente la inyección del ejecutable para dar paso a **XeXMenu**.</li>
+          <li>Conectá el pendrive a la consola encendida en la interfaz original de Microsoft.</li>
+          <li>Al detectar el dispositivo, aparecerá una ventana emergente solicitando aplicar una actualización de sistema/avatares. Seleccioná <strong>Sí</strong>.</li>
+          <li>La consola procesará los archivos manipulados provocando un desbordamiento de memoria que cargará automáticamente la interfaz de <strong>XeXMenu</strong>.</li>
         </ul>
       </div>
 
+      <!-- PASO 3 -->
       <div class="step-card">
         <span class="step-number">Paso 03</span>
-        <h3><i class="fa-solid fa-gears"></i> Instalación de DashLaunch y Dashboard Aurora</h3>
-        <p>Automatización del arranque e interfaz personalizada:</p>
+        <h3><i class="fa-solid fa-gears"></i> Instalación de DashLaunch y Configuración de Aurora</h3>
+        <p>Automatización del arranque al encender la consola:</p>
         <ul>
-          <li>Desde XeXMenu, navegá hasta la carpeta de DashLaunch y ejecutá <code>default.xex</code>.</li>
-          <li>En <strong>Rutas (Paths) ➔ Default</strong>, asigná la ruta del ejecutable de Aurora (<code>Hdd:\Aurora\Aurora.xex</code> o <code>Usb:\Aurora\Aurora.xex</code>).</li>
-          <li>Guardá los cambios en el archivo <code>launch.ini</code> para que la consola inicie siempre en Aurora.</li>
+          <li>Desde XeXMenu, usá el navegador de archivos (<kbd>LB</kbd>/<kbd>RB</kbd>) para copiar la carpeta <code>Aurora</code> al disco interno (<code>Hdd360:\</code>) o mantenerla en USB.</li>
+          <li>Ingresá a la carpeta de <strong>DashLaunch</strong> y ejecutá el archivo <code>default.xex</code>.</li>
+          <li>Navegá a <strong>Rutas (Paths) ➔ Default</strong> y elegí el archivo <code>Aurora.xex</code>. Guardá la configuración en el archivo <code>launch.ini</code> presionando <kbd>X</kbd> sobre <code>Hdd:\launch.ini</code>.</li>
         </ul>
       </div>
 
+      <!-- PASO 4 -->
       <div class="step-card">
         <span class="step-number">Paso 04</span>
-        <h3><i class="fa-solid fa-gamepad"></i> Carga de Juegos GOD y XEX en Aurora</h3>
-        <p>Estructura de almacenamiento para respaldos y parches:</p>
+        <h3><i class="fa-solid fa-gamepad"></i> Organización de Juegos GOD/XEX y Carátulas</h3>
+        <p>Estructura de almacenamiento para respaldos y parches Title Updates:</p>
         <ul>
-          <li><strong>Juegos GOD (Games On Demand):</strong> Ubicalos dentro de la ruta <code>Hdd1:\Content\0000000000000000\</code>.</li>
-          <li><strong>Juegos en formato XEX (Descomprimidos):</strong> Guardalos en tu carpeta elegida (ej: <code>Hdd1:\Juegos\</code> o <code>Usb1:\Juegos\</code>).</li>
-          <li>Configurá las rutas de escaneo en los ajustes de Aurora para la descarga automática de carátulas y Title Updates.</li>
+          <li><strong>Formato GOD (Games On Demand):</strong> Copiá los contenedores numéricos dentro de <code>Hdd1:\Content\0000000000000000\</code> para que el sistema y Aurora los reconozcan de inmediato.</li>
+          <li><strong>Formato XEX (Extraído):</strong> Guardálos en carpetas personalizadas como <code>Hdd1:\Juegos\</code> o <code>Usb1:\Juegos\</code>.</li>
+          <li>En Aurora, presioná <kbd>START</kbd>, andá a <strong>Manage Paths</strong>, agregá las rutas de tus carpetas y configurá el nivel de escaneo para descargar carátulas y actualizaciones automáticamente.</li>
         </ul>
       </div>
 
@@ -135,35 +147,35 @@
     <!-- PREGUNTAS FRECUENTES -->
     <section class="faq-section">
       <h2 class="faq-title">
-        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Solución de Errores
       </h2>
 
       <div class="faq-grid">
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿La consola no detecta el cartel de actualización al conectar el USB?
+            <i class="fa-solid fa-chevron-right"></i> La consola no muestra el mensaje de actualización al conectar el USB
           </div>
           <p class="faq-answer">
-            Si la consola no salta el aviso automático, renombrá la carpeta en el pendrive de <code>$SystemUpdate</code> a <code>$$SystemUpdate</code>. Esto suele ocurrir si la consola detecta que ya tiene aplicada la versión de Dashboard actual y requiere forzar la relectura.
+            Si el cartel no salta de forma automática, renombrá la carpeta de la actualización en el pendrive pasando de <code>$SystemUpdate</code> a <code>$$SystemUpdate</code>. Esto obliga a la consola a ignorar el chequeo de versión instalada y ejecutar la relectura del paquete.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es la diferencia entre juegos en formato GOD y XEX?
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es la diferencia entre el formato GOD y el formato XEX?
           </div>
           <p class="faq-answer">
-            El formato **GOD** (Games On Demand) es la estructura de contenedores oficial de Microsoft (subcarpetas de 16 caracteres), compatible con la biblioteca del Dashboard original. El formato **XEX** extrae los archivos individuales del juego, facilitando la instalación de mods, traducción de textos y reemplazo de datos.
+            El formato **GOD (Games On Demand)** encapsula el juego en bloques de datos idénticos a los de la Tienda de Xbox Live, permitiendo ejecutarlos tanto desde Aurora como desde el Dashboard oficial. El formato **XEX** descompone la estructura interna de archivos, siendo ideal para aplicar mods, traducciones o parches personalizados.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Es seguro conectar la consola a Internet usando Aurora o DashLaunch?
+            <i class="fa-solid fa-chevron-right"></i> ¿Es seguro conectar la consola a Internet desde Aurora o DashLaunch?
           </div>
           <p class="faq-answer">
-            No debes conectar la consola a los servidores oficiales de Xbox Live sin un **Stealth Server** activo, ya que la consola será baneada rápidamente. DashLaunch incluye opciones como `liveblock = true` activadas por defecto en el `launch.ini` para prevenir conexiones accidentales a Xbox Live.
+            No debe conectarse a los servidores oficiales de Xbox Live sin contar con un **Stealth Server** configurado. DashLaunch viene con el parámetro <code>liveblock = true</code> activado en el <code>launch.ini</code> por defecto para bloquear la conexión con Microsoft y prevenir baneos de consola.
           </p>
         </div>
 
@@ -171,5 +183,6 @@
     </section>
 
   </main>
+
 </body>
 </html>

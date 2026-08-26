@@ -18,27 +18,35 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
-    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <!-- Banner de la Consola -->
     <div class="guide-banner">
       <img src="img/xbox.jpg" alt="Xbox Clásica Banner">
     </div>
 
+    <!-- Encabezado de la Guía -->
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge xbox">Xbox Clásica</span>
         <span class="v-badge">v1.0 a v1.6 (Todas)</span>
       </div>
-      <h1>Xbox Original: Softmod Rocky5 + UnleashX & Insignia</h1>
+      <h1>Xbox Original: Softmod Rocky5, ENDGAME, UnleashX, Chimp & Insignia</h1>
       <p class="guide-subtitle">
-        Liberación por software mediante el exploit ENDGAME o partidas guardadas modificadas. Incluye instalación de Xbox Softmod Tool de Rocky5, cambio de disco rígido (HDD SATA) y registro en el servicio de Xbox Live alternativo Insignia.
+        Liberación por software sin chip utilizando el exploit ENDGAME o partidas guardadas modificadas. Incluye respaldo obligatorio de la EEPROM, instalación de Xbox Softmod Tool de Rocky5, reemplazo de HDD por un disco SATA con Chimp/FATXplorer y acceso a Insignia (Xbox Live online alternativo).
       </p>
+
+      <!-- BADGES DE REQUISITOS Y DIFICULTAD -->
+      <div class="req-badges-container">
+        <span class="req-pill"><i class="fa-solid fa-usb"></i> USB FATX (< 4GB) / Memory Unit</span>
+        <span class="req-pill"><i class="fa-solid fa-hard-drive"></i> Adaptador IDE-SATA + Cable 80 hilos</span>
+        <span class="req-pill diff-easy"><i class="fa-solid fa-gauge-high"></i> Dificultad: Fácil / Media</span>
+      </div>
     </header>
 
     <!-- Caja de Descarga GOOGLE DRIVE -->
     <div class="download-card">
       <div class="download-info">
-        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Xbox Clásica en Google Drive</h3>
-        <p>Servidor Oficial Google Drive (ENDGAME exploit, Xbox Softmod Tool v1.2.0, Chimp HDR, Dashboard UnleashX, XBMC y Setup Insignia).</p>
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Xbox Clásica AIO en Google Drive</h3>
+        <p>Servidor Oficial Google Drive (Exploit ENDGAME, Xbox Softmod Tool v1.2.0 de Rocky5, Chimp 261812, Dashboard UnleashX, XBMC4Gamers, FATXplorer y Setup Insignia).</p>
       </div>
       <a href="https://drive.google.com/drive/u/2/folders/12kGQFfYWJTlOVKPAUkUknefNhCwuRGC8" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
         <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
@@ -53,22 +61,22 @@
         <thead>
           <tr>
             <th>Revisión de Xbox</th>
-            <th>Método Recomendado</th>
+            <th>Método Softmod Principal</th>
             <th>Mod de Hardware (Alternativo)</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Xbox v1.0 a v1.5</strong></td>
-            <td>ENDGAME / Savegame Exploit</td>
-            <td>TSOP Flashing (Puente de Soldadura)</td>
+            <td><strong>Xbox v1.0 a v1.5 (Encoder Conexant / Focus)</strong></td>
+            <td>ENDGAME / Savegame Exploit (Rocky5)</td>
+            <td>TSOP Flashing (Puentes de soldadura en placa)</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
           <tr>
-            <td><strong>Xbox v1.6 / v1.6b (Xcalibur chip)</strong></td>
-            <td>ENDGAME / Savegame Exploit</td>
-            <td>Modchip (Aladdin / Modxbx) + LPC Rebuild</td>
+            <td><strong>Xbox v1.6 / v1.6b (Encoder Xcalibur)</strong></td>
+            <td>ENDGAME / Savegame Exploit (Rocky5)</td>
+            <td>Modchip (Aladdin / Modxbx + LPC Rebuild)</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
         </tbody>
@@ -80,46 +88,49 @@
 
     <div class="steps-container">
 
+      <!-- PASO 1 -->
       <div class="step-card">
         <span class="step-number">Paso 01</span>
         <h3><i class="fa-solid fa-usb"></i> Preparación del Pendrive USB o Memory Unit</h3>
         <p>Carga de archivos del exploit mediante adaptador USB a puerto de mando de Xbox:</p>
         <ul>
-          <li><strong>Método ENDGAME (Sin Juego Requerido):</strong> Formateá un pendrive de baja capacidad (menor a 4GB) con <strong>DriveExplorer</strong> en formato FATX y copiá el exploit ENDGAME en la tarjeta de memoria.</li>
-          <li><strong>Método Savegame (Splinter Cell / 007 / Agent Under Fire):</strong> Pasá la partida guardada modificada de Rocky5 a la tarjeta de memoria o USB adaptado.</li>
+          <li><strong>Método ENDGAME (Sin juego necesario):</strong> Formateá un pendrive de baja capacidad (menor a 4GB) con <strong>DriveExplorer</strong> en formato <strong>FATX</strong> y copiá los archivos del exploit ENDGAME a la unidad.</li>
+          <li><strong>Método Savegame (Splinter Cell / 007 / Agent Under Fire):</strong> Transferí la partida guardada modificada de Rocky5 a la Memory Unit o pendrive adaptado.</li>
         </ul>
       </div>
 
+      <!-- PASO 2 -->
       <div class="step-card">
         <span class="step-number">Paso 02</span>
-        <h3><i class="fa-solid fa-bolt"></i> Ejecución de Xbox Softmod Tool (Rocky5)</h3>
-        <p>Inyección de la EEPROM y parches del Dashboard:</p>
+        <h3><i class="fa-solid fa-bolt"></i> Ejecución de Xbox Softmod Tool (Rocky5) & EEPROM</h3>
+        <p>Inyección de parches del sistema y copia de seguridad de claves únicas:</p>
         <ul>
-          <li>Ingresá al administrador de memoria original del Dashboard de Xbox y seleccioná el pendrive USB.</li>
-          <li>Copiá el archivo de guardado al disco rígido de la consola.</li>
-          <li>Si usás ENDGAME, abrilo directamente desde el gestor de memoria. Si usás Savegame, iniciá el juego correspondiente y cargá la partida.</li>
-          <li>El instalador de Rocky5 se ejecutará automáticamente: realizá un respaldo (Dump) de la **EEPROM** y confirmá la instalación del Softmod.</li>
+          <li>Ingresá al administrador de memoria original del Dashboard de Xbox, seleccioná el pendrive USB y copiá el archivo de guardado al disco rígido.</li>
+          <li>Si usás ENDGAME, abrilo directamente explorando el almacenamiento. Si usás Savegame, lanzá el juego correspondiente y cargá la partida.</li>
+          <li>El instalador de <strong>Xbox Softmod Tool (Rocky5)</strong> se ejecutará: realizará automáticamente la copia de respaldo de la **EEPROM** y aplicará el Softmod en el disco rígido.</li>
         </ul>
       </div>
 
+      <!-- PASO 3 -->
       <div class="step-card">
         <span class="step-number">Paso 03</span>
-        <h3><i class="fa-solid fa-hard-drive"></i> Cambio de Disco Rígido HDD (Chimp / FATXplorer)</h3>
-        <p>Reemplazo del disco IDE original de 8GB/10GB por un disco SATA de hasta 2TB:</p>
+        <h3><i class="fa-solid fa-hard-drive"></i> Cambio de Disco Rígido HDD (Chimp 261812 / FATXplorer)</h3>
+        <p>Reemplazo del disco IDE de fábrica por un disco SATA de mayor capacidad (hasta 2TB):</p>
         <ul>
-          <li><strong>Método PC (FATXplorer):</strong> Conectá el nuevo disco SATA a la PC con un adaptador, formatealo en formato FATX con parches LBA48 y bloquealo utilizando la clave de tu <code>eeprom.bin</code> previamente respaldada.</li>
-          <li><strong>Método Consola (Chimp 261812):</strong> Conectá el nuevo disco SATA mediante un adaptador IDE-SATA en modo Slave junto con un cable IDE de 80 hilos. Ejecutá Chimp desde UnleashX para clonar el disco Master al Slave y bloquéalo.</li>
+          <li><strong>Método Consola (Chimp 261812):</strong> Conectá el nuevo disco SATA mediante un adaptador IDE-SATA en modo Slave con un **cable IDE de 80 hilos**. Ejecutá Chimp desde UnleashX para clonar el disco Master al Slave y bloquealo con tu clave EEPROM.</li>
+          <li><strong>Método PC (FATXplorer v3.0+):</strong> Conectá el disco SATA a tu PC, formatealo en FATX con parches LBA48 y bloquealo introduciendo el archivo <code>eeprom.bin</code> previamente respaldado.</li>
         </ul>
       </div>
 
+      <!-- PASO 4 -->
       <div class="step-card">
         <span class="step-number">Paso 04</span>
-        <h3><i class="fa-solid fa-globe"></i> Configuración de Insignia (Xbox Live Online)</h3>
-        <p>Restauración del multijugador online oficial de Xbox Clásica:</p>
+        <h3><i class="fa-solid fa-globe"></i> Dashboards (XBMC4Gamers / UnleashX) & Registro en Insignia</h3>
+        <p>Personalización de la interfaz y acceso al multijugador online alternativo:</p>
         <ul>
-          <li>Descargá la app de configuración de **Insignia Setup** y ejecútala desde el menú de aplicaciones de UnleashX.</li>
-          <li>Registrá la consola para obtener la clave de autenticación e ingresá una dirección de correo válida.</li>
-          <li>Iniciá cualquier juego compatible (Halo 2, Star Wars Battlefront II, Counter-Strike) y conectate a Xbox Live como en los viejos tiempos.</li>
+          <li>Elegí e instalá tu interfaz preferida: <strong>UnleashX</strong> para rapidez o <strong>XBMC4Gamers</strong> para una biblioteca con carátulas y sinopsis automáticas.</li>
+          <li>Descargá y ejecutá la aplicación <strong>Insignia Setup Assistant</strong> desde la sección Apps de tu Dashboard.</li>
+          <li>Registrá la consola para vincular tu dirección de correo, crear una cuenta de usuario y jugar online en títulos como <i>Halo 2</i>, <i>Battlefront II</i> o <i>Counter-Strike</i>.</li>
         </ul>
       </div>
 
@@ -128,35 +139,35 @@
     <!-- PREGUNTAS FRECUENTES -->
     <section class="faq-section">
       <h2 class="faq-title">
-        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Solución de Errores
       </h2>
 
       <div class="faq-grid">
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Por qué es fundamental guardar la copia de la EEPROM (`eeprom.bin`)?
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué es fundamental guardar una copia de la EEPROM (`eeprom.bin`)?
           </div>
           <p class="faq-answer">
-            Los discos rígidos de Xbox Clásica están bloqueados con una clave única vinculada a la placa madre. Si el disco original falla o se corrompe y no tenés la `eeprom.bin` guardada en tu PC, no podrás bloquear un nuevo disco y la consola quedará inoperativa (Error 05 / 06) salvo que instales un Modchip.
+            Los discos rígidos de Xbox Clásica están bloqueados criptográficamente mediante una clave única generada por la placa madre. Si el disco mecánico original se avería y no contás con el archivo <code>eeprom.bin</code> en tu PC, la consola quedará inutilizable (Error 05 / Error 06) a menos que instales un Modchip por hardware.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Necesito un cable IDE de 80 hilos para instalar un disco SATA?
+            <i class="fa-solid fa-chevron-right"></i> ¿Es obligatorio el cable IDE de 80 hilos al colocar un adaptador SATA?
           </div>
           <p class="faq-answer">
-            Sí, obligatoriamente. El cable IDE original de fábrica es de 40 hilos y no soporta las velocidades de transferencia ni la estabilidad que requieren los adaptadores IDE-SATA modernos. Usar el cable original provocará congelamientos o errores de lectura.
+            Sí. El cable IDE plano de fábrica es de 40 hilos y no ofrece el ancho de banda ni el blindaje necesario para los adaptadores IDE-SATA modernos. Usar el cable original de 40 hilos causará congelamientos, lentitud en las cargas o errores de booteo (Error 13 / Error 21).
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Qué es Insignia y necesito pagar suscripción?
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué es Insignia y requiere algún pago de suscripción?
           </div>
           <p class="faq-answer">
-            **Insignia** es un reemplazo gratuito del servicio original Xbox Live para la consola Xbox clásica. Te permite crear cuentas, agregar amigos, guardar estadísticas y jugar multijugador online en juegos soportados directamente desde los menús del juego original sin necesidad de PC.
+            **Insignia** es una recreación totalmente gratuita e independiente del servicio Xbox Live original para la primera Xbox. Te permite crear cuentas, chatear, agregar amigos y jugar partidas multijugador online de forma directa desde la interfaz original de los juegos sin necesidad de usar programas en la PC.
           </p>
         </div>
 
@@ -164,5 +175,6 @@
     </section>
 
   </main>
+
 </body>
 </html>

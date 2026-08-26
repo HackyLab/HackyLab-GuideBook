@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nintendo DSi Unlaunch | Hackyntosh</title>
+  <title>Nintendo DSi Unlaunch & TWiLight Menu++ | Hackyntosh</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,58 +18,72 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
-    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <!-- Banner de la Consola -->
     <div class="guide-banner">
       <img src="img/ndsi.jpg" alt="Nintendo DSi Banner">
     </div>
 
+    <!-- Encabezado de la Guía -->
     <header class="guide-header">
       <div class="guide-title-group">
-        <span class="badge nintendo">Nintendo DSi</span>
-        <span class="v-badge">Todas las Versiones</span>
+        <span class="badge nintendo">Nintendo DSi / DSi XL</span>
+        <span class="v-badge">FW 1.4 a 1.4.5 (Todas las Regiones)</span>
       </div>
-      <h1>Nintendo DSi: Memory Pit + Unlaunch + TWiLight Menu++</h1>
+      <h1>Nintendo DSi: Memory Pit, Flipnote Lenny, Unlaunch CFW & TWiLight Menu++</h1>
       <p class="guide-subtitle">
-        Liberación mediante exploit de la app Cámara DSi, instalación de Unlaunch para arranque permanente sin cartucho y ejecutor de ROMs DS/GBA con TWiLight Menu++.
+        Guía definitiva basada en dsi.cfw.guide. Liberación de consolas Nintendo DSi y DSi XL mediante exploits de software, respaldo de seguridad de NAND, instalación de Unlaunch permanente y ejecutor multitarea TWiLight Menu++.
       </p>
+
+      <!-- BADGES DE REQUISITOS Y DIFICULTAD -->
+      <div class="req-badges-container">
+        <span class="req-pill"><i class="fa-solid fa-sd-card"></i> Tarjeta SD (FAT32)</span>
+        <span class="req-pill"><i class="fa-solid fa-shield-halved"></i> Respaldo NAND (nand.bin)</span>
+        <span class="req-pill diff-easy"><i class="fa-solid fa-gauge-high"></i> Dificultad: Fácil</span>
+      </div>
     </header>
 
     <!-- Caja de Descarga GOOGLE DRIVE -->
     <div class="download-card">
       <div class="download-info">
-        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack DSi Unlaunch + TWiLight Menu++ en Drive</h3>
-        <p>Servidor Oficial Google Drive (Memory Pit payload, Unlaunch.dsi y última versión de TWiLight Menu++).</p>
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack DSi Unlaunch, Exploits & TWiLight Menu++ en Drive</h3>
+        <p>Servidor Oficial Google Drive (Memory Pit payloads por región, Flipnote Lenny, DumpTool para NAND, Unlaunch.dsi v2.0 y última build de TWiLight Menu++).</p>
       </div>
-      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+      <a href="https://drive.google.com/drive/u/2/folders/1NDSi_Unlaunch_TWiLight_Pack" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
         <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
       </a>
     </div>
 
     <!-- TABLA DE COMPATIBILIDAD -->
-    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Modelo y Firmware</h3>
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Modelo, Firmware y Exploit</h3>
 
     <div class="table-container">
       <table class="custom-table">
         <thead>
           <tr>
             <th>Modelo de Consola</th>
-            <th>Método de Exploit Inicial</th>
-            <th>Hack Permanente</th>
-            <th>Estado</th>
+            <th>Versión de Firmware</th>
+            <th>Exploit Inicial Recomendado</th>
+            <th>Estado CFW</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Nintendo DSi (Estándar)</strong></td>
-            <td>Memory Pit (Cámara DSi) / Flipnote</td>
-            <td>Unlaunch CFW</td>
-            <td><span class="status-pill success">100% Compatible</span></td>
+            <td><strong>Nintendo DSi (Estándar / NTSC / PAL / JAP)</strong></td>
+            <td>FW 1.4.0 a 1.4.5</td>
+            <td>Memory Pit (Cámara DSi)</td>
+            <td><span class="status-pill success">100% Compatible (Unlaunch)</span></td>
           </tr>
           <tr>
-            <td><strong>Nintendo DSi XL</strong></td>
-            <td>Memory Pit (Cámara DSi) / Flipnote</td>
-            <td>Unlaunch CFW</td>
-            <td><span class="status-pill success">100% Compatible</span></td>
+            <td><strong>Nintendo DSi XL / LL</strong></td>
+            <td>FW 1.4.0 a 1.4.5</td>
+            <td>Memory Pit (Cámara DSi)</td>
+            <td><span class="status-pill success">100% Compatible (Unlaunch)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Consolas con Cámara Defectuosa / Bloqueada</strong></td>
+            <td>Cualquier Firmware</td>
+            <td>Flipnote Lenny / Style Savvy / LazyNAND</td>
+            <td><span class="status-pill success">100% Compatible (Unlaunch)</span></td>
           </tr>
         </tbody>
       </table>
@@ -80,46 +94,52 @@
 
     <div class="steps-container">
 
+      <!-- PASO 1 -->
       <div class="step-card">
         <span class="step-number">Paso 01</span>
-        <h3><i class="fa-solid fa-sd-card"></i> Preparación de la Tarjeta SD</h3>
-        <p>Formateá tu tarjeta SD en sistema de archivos <strong>FAT32</strong> (tamaño de clúster 32KB).</p>
+        <h3><i class="fa-solid fa-sd-card"></i> Preparación de la Tarjeta SD y Archivos Base</h3>
+        <p>Formateo limpio e inyección del payload de arranque:</p>
         <ul>
-          <li>Copiá el archivo <code>pit.bin</code> dentro de la ruta <code>/private/ds/app/48415645/</code> en la SD.</li>
-          <li>Descomprimí las carpetas <code>_nds</code>, <code>roms</code> y el archivo <code>BOOT.NDS</code> de TWiLight Menu++ en la raíz.</li>
-          <li>Colocá el instalador <code>UNLAUNCH.DSI</code> en la raíz de la SD.</li>
+          <li>Formateá tu tarjeta SD (hasta 32GB recomendados, SDXC de 64GB+ soportadas) en <strong>FAT32</strong> con clústeres de 32KB usando <strong>GUIFormat</strong> o <strong>SD Card Formatter</strong>.</li>
+          <li>Copiá el archivo <code>pit.bin</code> (correspondiente a la región de tu consola) en la ruta <code>SD:/private/ds/app/48415645/</code>.</li>
+          <li>Extraé la carpeta <code>_nds</code>, la carpeta <code>roms</code> y el archivo <code>BOOT.NDS</code> (TWiLight Menu++) en la raíz de la SD.</li>
+          <li>Colocá los ejecutables <code>UNLAUNCH.DSI</code> y <code> DumpTool.nds</code> en la raíz de la memoria.</li>
         </ul>
       </div>
 
+      <!-- PASO 2 -->
       <div class="step-card">
         <span class="step-number">Paso 02</span>
-        <h3><i class="fa-solid fa-camera"></i> Ejecución del Exploit Memory Pit</h3>
-        <p>Carga inicial de la interfaz desde la Cámara DSi oficial:</p>
+        <h3><i class="fa-solid fa-camera"></i> Inyección del Exploit y Respaldo Obligatorio de NAND</h3>
+        <p>Disparo del exploit en espacio de usuario y volcado de seguridad de la consola:</p>
         <ul>
-          <li>Insertá la SD en la consola y encendela.</li>
-          <li>Abrí la aplicación <strong>Cámara Nintendo DSi</strong>.</li>
-          <li>Tocá la opción <strong>Tarjeta SD</strong> en la pantalla superior. La pantalla parpadeará en magenta y cargará automáticamente TWiLight Menu++.</li>
+          <li>Insertá la SD en la Nintendo DSi y abrí la aplicación <strong>Cámara Nintendo DSi</strong>.</li>
+          <li>Tocá la pestaña <strong>Tarjeta SD</strong> en la pantalla superior. La pantalla parpadeará en magenta y se ejecutará automáticamente TWiLight Menu++.</li>
+          <li>Dentro del menú, navega hasta ejecutar la herramienta <code>DumpTool.nds</code>. Presioná <kbd>A</kbd> para generar el archivo <code>nand.bin</code> en tu tarjeta SD. Guardá una copia de este archivo en tu PC como respaldo de emergencia.</li>
         </ul>
       </div>
 
+      <!-- PASO 3 -->
       <div class="step-card">
         <span class="step-number">Paso 03</span>
-        <h3><i class="fa-solid fa-bolt"></i> Instalación de Unlaunch (Hack Permanente)</h3>
-        <p>Para encender la consola directamente en TWiLight Menu++ sin entrar a la cámara:</p>
+        <h3><i class="fa-solid fa-bolt"></i> Instalación de Unlaunch (Bootloader CFW Permanente)</h3>
+        <p>Parcheo del firmware interno para arranque directo sin necesidad de la Cámara DSi:</p>
         <ul>
-          <li>Desde el explorador de TWiLight Menu++, ejecutá <code>UNLAUNCH.DSI</code>.</li>
-          <li>Seleccioná <strong>Install Now</strong> y confirmá presionando <kbd>A</kbd> + <kbd>B</kbd>.</li>
-          <li>En las opciones de arranque (Options), asigná a <code>NO BUTTON</code> la aplicación TWiLight Menu++ para arranque directo.</li>
+          <li>Desde TWiLight Menu++, ejecutá el instalador <code>UNLAUNCH.DSI</code>.</li>
+          <li>Seleccioná la opción <strong>Install Now</strong> e iniciá la escritura presionando la combinación <kbd>A</kbd> + <kbd>B</kbd>.</li>
+          <li>Al finalizar la instalación, ingresá al menú <strong>Options</strong> de Unlaunch: asigná en la casilla <code>NO BUTTON</code> el ejecutable <code>BOOT.NDS</code> o <code>TWiLight Menu++</code> para que la consola encienda instantáneamente en el custom menu.</li>
         </ul>
       </div>
 
+      <!-- PASO 4 -->
       <div class="step-card">
         <span class="step-number">Paso 04</span>
-        <h3><i class="fa-solid fa-gamepad"></i> Carga de ROMs (DS, GBA, GB, SNES)</h3>
-        <p>Estructura para guardar tus juegos:</p>
+        <h3><i class="fa-solid fa-gamepad"></i> Estructura de ROMs y Optimización de Hardware</h3>
+        <p>Carga de juegos y configuración de frecuencia DSi Mode (133MHz):</p>
         <ul>
-          <li>Guarda las ROMs de Nintendo DS en <code>/roms/nds/</code>.</li>
-          <li>Las ROMs de Game Boy Advance van en <code>/roms/gba/</code> (se ejecutan de forma nativa vía GBARunner2).</li>
+          <li>Copiá tus ROMs de Nintendo DS en <code>/roms/nds/</code>. Los juegos cargan mediante <strong>nds-bootstrap</strong> a velocidades superiores a un cartucho R4 tradicional.</li>
+          <li>Ubicá las ROMs de Game Boy Advance en <code>/roms/gba/</code> (ejecutadas de forma nativa por el chip ARM7 vía GBARunner2/3).</li>
+          <li>Accedé a los Ajustes de TWiLight Menu++ (<kbd>SELECT</kbd>) y activa la velocidad de procesador a **133MHz (DSi Mode)** y la memoria extendida de **16MB** para eliminar la ralentización en juegos compatibles.</li>
         </ul>
       </div>
 
@@ -128,35 +148,35 @@
     <!-- PREGUNTAS FRECUENTES -->
     <section class="faq-section">
       <h2 class="faq-title">
-        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Solución de Errores
       </h2>
 
       <div class="faq-grid">
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Es riesgoso instalar Unlaunch en la DSi?
+            <i class="fa-solid fa-chevron-right"></i> ¿Es arriesgado instalar Unlaunch y para qué sirve el archivo nand.bin?
           </div>
           <p class="faq-answer">
-            Si seguís los pasos correctamente y tenés la batería cargada durante la instalación, el proceso es muy seguro. Además, Unlaunch brinda protección casi total contra brindado (anti-brick) en la DSi, permitiendo acceder a un menú de recuperación manteniendo presionado <kbd>A</kbd> + <kbd>B</kbd> al encender.
+            El proceso es sumamente seguro si se cuenta con batería cargada. El archivo <code>nand.bin</code> es un respaldo idéntico del chip de memoria flash de tu DSi. Guardarlo en tu PC te garantiza recuperar la consola mediante reprogramación en caso de que borres algún archivo crítico del sistema por error.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si Memory Pit no se ejecuta al tocar la opción SD en la Cámara?
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si al tocar la opción SD en la Cámara la consola se congela o da error?
           </div>
           <p class="faq-answer">
-            Asegurate de que la ruta del archivo `pit.bin` sea exactamente `SD:/private/ds/app/48415645/pit.bin`. Si tu DSi tiene el firmware 1.4.5J (japonesa) o alguna revisión especial y falla, podés probar usar otros métodos como **Style Savvy** o **Flipnote Lenny**.
+            Verificá que estés utilizando el archivo <code>pit.bin</code> adecuado para tu región (USA, EUR, JAP, AUS). Asimismo, asegurate de que la tarjeta SD no supere los 32GB o que esté correctamente formateada en **FAT32 con clústeres de 32KB**.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Necesito un flashcard R4 para jugar juegos de DS con esta liberación?
+            <i class="fa-solid fa-chevron-right"></i> ¿Sigo necesitando una tarjeta Flashcard R4 para jugar en Nintendo DSi?
           </div>
           <p class="faq-answer">
-            No. **TWiLight Menu++** lee las ROMs directamente desde la tarjeta SD de la consola usando nds-bootstrap, liberándote de la necesidad de usar cartuchos R4 o flashcards externas.
+            No. Gracias al Custom Firmware **Unlaunch** y al cargador **nds-bootstrap** integrado en TWiLight Menu++, los juegos de NDS, DSiWare y emuladores corren directamente desde la ranura de la tarjeta SD de la consola con mejores tiempos de carga y compatibilidad con funciones DSi Enhanced.
           </p>
         </div>
 
@@ -164,5 +184,6 @@
     </section>
 
   </main>
+
 </body>
 </html>

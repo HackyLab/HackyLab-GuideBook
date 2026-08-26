@@ -18,64 +18,78 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
-    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <!-- Banner de la Consola -->
     <div class="guide-banner">
       <img src="img/wii.jpg" alt="Nintendo Wii Banner">
     </div>
 
+    <!-- Encabezado de la Guía -->
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge nintendo">Nintendo Wii</span>
-        <span class="v-badge">FW 4.3 (Todas las regiones)</span>
+        <span class="v-badge">FW 4.3 (Todas las Regiones)</span>
       </div>
-      <h1>Nintendo Wii: LetterBomb / Str2hax + cIOS d2x & USB Loader GX</h1>
+      <h1>Nintendo Wii: LetterBomb, Str2hax, BootMii, Priiloader, cIOS d2x & USB Loader GX</h1>
       <p class="guide-subtitle">
-        Liberación completa para Nintendo Wii. Instalación del canal Homebrew Channel, protección Anti-Brick con Priiloader, cIOS d2x y carga de juegos de Wii y GameCube desde pendrives o discos externos.
+        Guía definitiva basada en wii.hacks.guide. Instalación de Homebrew Channel, copia de seguridad BootMii NAND, protección Anti-Brick con Priiloader, cIOS d2x y carga de backups de Wii y GameCube mediante USB Loader GX y Nintendont.
       </p>
+
+      <!-- BADGES DE REQUISITOS Y DIFICULTAD -->
+      <div class="req-badges-container">
+        <span class="req-pill"><i class="fa-solid fa-sd-card"></i> SD / Pendrive (FAT32)</span>
+        <span class="req-pill"><i class="fa-solid fa-shield-halved"></i> Respaldo NAND (BootMii)</span>
+        <span class="req-pill diff-easy"><i class="fa-solid fa-gauge-high"></i> Dificultad: Muy Fácil</span>
+      </div>
     </header>
 
     <!-- Caja de Descarga GOOGLE DRIVE -->
     <div class="download-card">
       <div class="download-info">
-        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Wii AIO en Google Drive</h3>
-        <p>Servidor Oficial Google Drive (LetterBomb, HackMii Installer, Priiloader, cIOS d2x installer, USB Loader GX y Nintendont).</p>
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Wii AIO Multi-tool en Google Drive</h3>
+        <p>Servidor Oficial Google Drive (HackMii Installer v1.2, LetterBomb, Priiloader v0.10, d2x cIOS Installer, USB Loader GX v3.0, WiiFlow Lite y Nintendont).</p>
       </div>
-      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+      <a href="https://drive.google.com/drive/u/2/folders/1Wii_Homebrew_cIOS_USB_Loader_Pack" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
         <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
       </a>
     </div>
 
     <!-- TABLA DE COMPATIBILIDAD -->
-    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Modelo de Consola</h3>
+    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Modelo de Consola y Método</h3>
 
     <div class="table-container">
       <table class="custom-table">
         <thead>
           <tr>
             <th>Modelo de Consola</th>
-            <th>Métodos de Exploit</th>
+            <th>Método de Exploit Principal</th>
             <th>Soporte GameCube</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Wii Estándar (RVL-001 - Vertical)</strong></td>
-            <td>LetterBomb / Str2hax / Wilbrand</td>
-            <td>Nativo (Puertos de Control + Memory Card)</td>
+            <td><strong>Wii Estándar (RVL-001 - Puertos GameCube)</strong></td>
+            <td>LetterBomb (SD) / Str2hax (WiFi) / FlashHax</td>
+            <td>Nativo (Puertos Mandos + Memory Card)</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
           <tr>
             <td><strong>Wii Family Edition (RVL-101 - Horizontal)</strong></td>
-            <td>LetterBomb / Str2hax / Wilbrand</td>
-            <td>Vía Nintendont (Solo controles USB/Classic)</td>
+            <td>LetterBomb (SD) / Str2hax (WiFi) / Wilbrand</td>
+            <td>Vía Nintendont (Mandos USB / Classic)</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
           <tr>
-            <td><strong>Wii mini (RVL-201 - Roja y Negra)</strong></td>
+            <td><strong>Wii mini (RVL-201 - Roja / Negra)</strong></td>
             <td>Bluebomb (Vía Bluetooth en Linux)</td>
-            <td>Vía Nintendont (Requiere Mod de SD/USB)</td>
+            <td>Vía Nintendont (Requiere Mod Hardware SD)</td>
             <td><span class="status-pill warning">Requiere Bluebomb</span></td>
+          </tr>
+          <tr>
+            <td><strong>Modo vWii (Nintendo Wii U)</strong></td>
+            <td>Wuphax / CompatInstaller (Desde Wii U)</td>
+            <td>Vía Nintendont (Inyección / Mandos USB)</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
         </tbody>
       </table>
@@ -86,46 +100,52 @@
 
     <div class="steps-container">
 
+      <!-- PASO 1 -->
       <div class="step-card">
         <span class="step-number">Paso 01</span>
-        <h3><i class="fa-solid fa-envelope"></i> Instalación del Homebrew Channel (LetterBomb / Str2hax)</h3>
-        <p>Carga del instalador de HackMii en la memoria de la consola:</p>
+        <h3><i class="fa-solid fa-envelope"></i> Disparo del Exploit, Homebrew Channel y Respaldo BootMii</h3>
+        <p>Carga del entorno de modificación y respaldo de la NAND del sistema:</p>
         <ul>
-          <li><strong>LetterBomb (vía SD):</strong> Ingresá la dirección MAC de tu Wii en <code>please.hackmii.com</code>, bajá el paquete en una SD en <strong>FAT32</strong> y abrí la carta roja en el tablón de mensajes.</li>
-          <li><strong>Str2hax (sin SD):</strong> Cambiá el DNS primario en la red a <code>18.188.135.9</code> y aceptá el contrato de uso de canales para cargar el instalador directamente por internet.</li>
-          <li>Instalá el <strong>Homebrew Channel</strong> y realizá la copia de seguridad de la NAND con <strong>BootMii</strong>.</li>
+          <li><strong>Método LetterBomb (SD Recomendada):</strong> Obtené la dirección MAC de tu Wii en Ajustes, ingresala en <code>please.hackmii.com</code>, copia los archivos a una tarjeta SD en <strong>FAT32</strong> y abrí la carta roja en el Tablón de Mensajes de la Wii.</li>
+          <li><strong>Método Str2hax (Sin tarjeta SD):</strong> Conectá la Wii a Internet, configurá el DNS primario en <code>18.188.135.9</code> y aceptá el contrato de servicios para lanzar el HackMii Installer.</li>
+          <li>Instalá el <strong>Homebrew Channel</strong> y ejecutá <strong>BootMii</strong> para volcar la memoria interna en la SD (archivos <code>nand.bin</code> y <code>keys.bin</code>). Conservalos a salvo en tu PC.</li>
         </ul>
       </div>
 
+      <!-- PASO 2 -->
       <div class="step-card">
         <span class="step-number">Paso 02</span>
-        <h3><i class="fa-solid fa-shield-halved"></i> Protección Anti-Brick con Priiloader</h3>
-        <p>Configuración del menú de rescate frente a actualizaciones accidentales:</p>
+        <h3><i class="fa-solid fa-shield-halved"></i> Instalación y Configuración Anti-Brick de Priiloader</h3>
+        <p>Protección permanente del menú del sistema ante bloqueos y actualizaciones accidentales:</p>
         <ul>
-          <li>Abrí el Homebrew Channel e iniciá el instalador de <strong>Priiloader</strong>.</li>
-          <li>Presioná <kbd>+</kbd> para instalarlo en la memoria interna de la consola.</li>
-          <li>Apagá la Wii, mantené presionado el botón <kbd>RESET</kbd> al encenderla para entrar al menú de Priiloader y activá las opciones <code>Block Disc Updates</code> y <code>Block Online Updates</code>.</li>
+          <li>Iniciá <strong>Priiloader Installer</strong> desde el Homebrew Channel y presioná <kbd>+</kbd> en el Wiimote para escribirlo en la memoria flash.</li>
+          <li>Apagá la consola, mantené presionado el botón <kbd>RESET</kbd> y enciéndela para acceder al menú especial de Priiloader.</li>
+          <li>Entrá a <strong>System Menu Hacks</strong> y activá las casillas: <code>Block Disc Updates</code>, <code>Block Online Updates</code> y <code>Auto-press A at Health Screen</code>. Guardá los cambios.</li>
         </ul>
       </div>
 
+      <!-- PASO 3 -->
       <div class="step-card">
         <span class="step-number">Paso 03</span>
-        <h3><i class="fa-solid fa-microchip"></i> Instalación de cIOS d2x (Slots 249 y 250)</h3>
-        <p>Parches del sistema necesarios para que los cargadores USB puedan leer ISOs y WBFS:</p>
+        <h3><i class="fa-solid fa-microchip"></i> Instalación de cIOS d2x (Slots 249, 250 y 251)</h3>
+        <p>Inyección de Custom IOS necesarios para la lectura de juegos desde almacenamiento USB:</p>
         <ul>
           <li>Abrí <strong>d2x cIOS Installer</strong> desde el Homebrew Channel.</li>
-          <li><strong>Slot 249:</strong> Seleccioná <code>d2x-v10-beta52</code>, Base <code>56</code>, Slot <code>249</code> y revisión <code>21010</code>. Presioná <kbd>A</kbd> para instalar.</li>
-          <li><strong>Slot 250:</strong> Configurá <code>d2x-v10-beta52</code>, Base <code>57</code>, Slot <code>250</code> y revisión <code>21010</code>. Presioná <kbd>A</kbd> para instalar.</li>
+          <li><strong>Slot 249:</strong> Seleccioná <code>d2x-v10-beta52</code>, Base <code>56</code>, Slot <code>249</code>, Revision <code>21010</code>. Presioná <kbd>A</kbd> para instalar.</li>
+          <li><strong>Slot 250:</strong> Seleccioná <code>d2x-v10-beta52</code>, Base <code>57</code>, Slot <code>250</code>, Revision <code>21010</code>. Presioná <kbd>A</kbd> para instalar.</li>
+          <li><strong>Slot 251:</strong> Seleccioná <code>d2x-v10-beta52</code>, Base <code>58</code>, Slot <code>251</code>, Revision <code>21010</code>. Presioná <kbd>A</kbd> para instalar.</li>
         </ul>
       </div>
 
+      <!-- PASO 4 -->
       <div class="step-card">
         <span class="step-number">Paso 04</span>
-        <h3><i class="fa-solid fa-gamepad"></i> USB Loader GX & Nintendont (Wii y GameCube)</h3>
-        <p>Estructura de archivos en tu pendrive USB o disco rígido externo (formato FAT32 o NTFS):</p>
+        <h3><i class="fa-solid fa-gamepad"></i> Estructura USB, USB Loader GX & Nintendont</h3>
+        <p>Organización de juegos de Nintendo Wii y GameCube en disco duro o pendrive:</p>
         <ul>
-          <li><strong>Juegos de Wii (.wbfs / .iso):</strong> Guardalos dentro de la carpeta <code>wbfs</code> en la raíz del USB (ejemplo: <code>USB:/wbfs/Juego [ID]/ID.wbfs</code>). Usá <strong>Wii Backup Manager</strong> en la PC.</li>
-          <li><strong>Juegos de GameCube (.iso):</strong> Renombrá el archivo a <code>game.iso</code> y ubicalo dentro de la carpeta <code>games</code> (ejemplo: <code>USB:/games/MarioSunshine/game.iso</code>) para ejecutarlo con <strong>Nintendont</strong>.</li>
+          <li>Formateá tu disco duro externo o pendrive en <strong>FAT32</strong> con clústeres de 32KB usando <strong>GUIFormat</strong>. Conéctalo al <strong>Puerto USB 0</strong> (puerto inferior si la consola está horizontal).</li>
+          <li><strong>Juegos de Wii (.wbfs / .iso):</strong> Creá la carpeta <code>wbfs</code> en la raíz. Convertí e instalá tus juegos usando <strong>Wii Backup Manager</strong> para generar la estructura <code>USB:/wbfs/Nombre [ID]/ID.wbfs</code>.</li>
+          <li><strong>Juegos de GameCube (.iso):</strong> Ubicá las ROMs renombradas a <code>game.iso</code> dentro de la carpeta <code>games</code> (ejemplo: <code>USB:/games/Zelda Wind Waker [GZLE01]/game.iso</code>) para ejecutarlas nativamente con <strong>Nintendont</strong>.</li>
         </ul>
       </div>
 
@@ -134,35 +154,35 @@
     <!-- PREGUNTAS FRECUENTES -->
     <section class="faq-section">
       <h2 class="faq-title">
-        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
+        <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Solución de Errores
       </h2>
 
       <div class="faq-grid">
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿En qué puerto USB debo conectar el disco rígido o pendrive?
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es el puerto USB correcto para conectar mi disco duro o pendrive?
           </div>
           <p class="faq-answer">
-            En la Wii original, debés conectar la unidad USB en el <strong>Puerto 0</strong> (si la consola está acostada, es el puerto USB inferior; si está parada, el de la derecha). El otro puerto no tiene soporte para la carga de backups con cIOS d2x.
+            En la Nintendo Wii, la carga de backups a través de cIOS está configurada principalmente para el <strong>Puerto USB 0</strong>. Con la consola en posición horizontal, es el puerto USB de la parte **inferior** (o el de la **derecha** si la consola está de pie verticalmente). El otro puerto está reservado para periféricos o micrófonos.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Por qué USB Loader GX se queda en "Waiting for HDD" o se congela?
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué USB Loader GX se congela en "Waiting for HDD" o pantalla negra?
           </div>
           <p class="faq-answer">
-            Suele ocurrir por usar un pendrive incompatible, no haber instalado los cIOS d2x en los slots 249/250 o haber conectado la unidad en el puerto USB equivocado. Asegurate de que la unidad esté formateada en **FAT32** con tamaño de clúster de 32 KB.
+            Este problema ocurre generalmente por tres causas: haber conectado el almacenamiento en el puerto USB incorrecto, que el disco no esté formateado en **FAT32 con clústeres de 32KB**, o por la falta de instalación de los **cIOS d2x** en los slots 249 y 250.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Puedo jugar a GameCube en consolas sin puertos de control de GameCube?
+            <i class="fa-solid fa-chevron-right"></i> ¿Puedo jugar títulos de GameCube si mi modelo de Wii no tiene puertos de control GameCube?
           </div>
           <p class="faq-answer">
-            Sí. Usando <strong>Nintendont</strong> podés jugar con un Mando Pro de Wii, Wiimote + Classic Controller, o incluso conectar joysticks de PS3, PS4 o USB genéricos a la consola.
+            Sí. Gracias al loader **Nintendont**, podés jugar cualquier título de GameCube en consolas Wii Family Edition (RVL-101) utilizando el mando **Classic Controller / Pro**, un Wiimote + Nunchuk, o mandos USB modernos como DualShock 3, DualSense o Xbox mediante adaptación directa.
           </p>
         </div>
 
@@ -170,5 +190,6 @@
     </section>
 
   </main>
+
 </body>
 </html>

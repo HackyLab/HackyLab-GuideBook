@@ -18,7 +18,6 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
-    <!-- Banner de la Consola / Dispositivo (Contenedor Blanco) -->
     <div class="guide-banner">
       <img src="img/kindle.jpg" alt="Amazon Kindle Banner">
     </div>
@@ -26,113 +25,121 @@
     <header class="guide-header">
       <div class="guide-title-group">
         <span class="badge kindle">Amazon Kindle</span>
-        <span class="v-badge">FW 5.16.x y anteriores</span>
+        <span class="v-badge">FW 5.16.2.1.1 y anteriores</span>
       </div>
-      <h1>Kindle: Jailbreak LanguageBreak + KOReader & KUAL</h1>
+      <h1>Kindle: Jailbreak Universal (WinterBreak / LanguageBreak) + KOReader & KUAL</h1>
       <p class="guide-subtitle">
-        Liberación de e-readers Amazon Kindle para la instalación del lector avanzado KOReader, soporte nativo de formatos EPUB, cómics (CBZ/CBR) y personalización del salvapantallas.
+        Guía completa basada en la documentación oficial de KindleModding. Liberación de e-readers Amazon Kindle para ejecutar KOReader, soporte nativo de archivos EPUB, cómics (CBZ/CBR), parches de personalización y bloqueo de actualizaciones OTA.
       </p>
+
+      <div class="req-badges-container">
+        <span class="req-pill"><i class="fa-solid fa-usb"></i> Cable USB / PC</span>
+        <span class="req-pill"><i class="fa-solid fa-book-open"></i> FW ≤ 5.16.2.1.1</span>
+        <span class="req-pill diff-easy"><i class="fa-solid fa-gauge-high"></i> Dificultad: Fácil</span>
+      </div>
     </header>
 
-    <!-- Caja de Descarga GOOGLE DRIVE -->
     <div class="download-card">
       <div class="download-info">
-        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Kindle Jailbreak en Google Drive</h3>
-        <p>Servidor Oficial Google Drive (LanguageBreak, Hotfix, KUAL, KOReader y gestor de portadas CoverExplorer).</p>
+        <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Kindle Modding (WinterBreak, Hotfix, KUAL & KOReader)</h3>
+        <p>Servidor Oficial Google Drive (Paquetes WinterBreak, LanguageBreak, Hotfix universal, KUAL Booklet, KOReader y utilidades KindleModding).</p>
       </div>
-      <a href="https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
+      <a href="https://drive.google.com/drive/u/2/folders/1G0Rab5jWZWTLZ0Rjg5niTD4JiaUmaSMQ" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
         <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
       </a>
     </div>
 
-    <!-- TABLA DE COMPATIBILIDAD -->
-    <h3><i class="fa-solid fa-microchip"></i> Compatibilidad por Dispositivo y Firmware</h3>
+    <h3><i class="fa-solid fa-microchip"></i> Tabla Global de Compatibilidad (KindleModding)</h3>
 
     <div class="table-container">
       <table class="custom-table">
         <thead>
           <tr>
             <th>Modelo de Kindle</th>
-            <th>Rango de Firmware</th>
-            <th>Método de Jailbreak</th>
+            <th>Versión de Firmware</th>
+            <th>Exploit Recomendado</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Kindle Paperwhite 10ª/11ª Gen / Basic / Oasis</strong></td>
+            <td><strong>Kindle Paperwhite 4 / 5, Basic 10 / 11, Oasis 2 / 3</strong></td>
             <td>FW 5.16.2.1.1 o inferior</td>
-            <td>LanguageBreak (Vía Idioma)</td>
+            <td>WinterBreak / LanguageBreak</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
           <tr>
-            <td><strong>Kindle Modelos Antiguos (PW 1/2/3, Touch, Voyage)</strong></td>
+            <td><strong>Kindle Touch, PW 1 / 2 / 3, Voyage, Oasis 1</strong></td>
             <td>FW 5.14.2 u anterior</td>
-            <td>WatchBreak / KindleBreak</td>
+            <td>WatchBreak / Freya / KindleBreak</td>
             <td><span class="status-pill success">100% Compatible</span></td>
           </tr>
           <tr>
-            <td><strong>Cualquier Kindle</strong></td>
-            <td>FW 5.16.3 o superior</td>
-            <td>En desarrollo / Requiere Downgrade si es viable</td>
-            <td><span class="status-pill warning">No Compatible / Bloqueado</span></td>
+            <td><strong>Kindle Legacy (K1, K2, DX, Keyboard, K4, K5)</strong></td>
+            <td>FW 2.x / 3.x / 4.x / 5.3.x</td>
+            <td>Factory Jailbreak / Direct MP3 Exploit</td>
+            <td><span class="status-pill success">100% Compatible</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cualquier Kindle (Todas las generaciones)</strong></td>
+            <td>FW 5.16.3 en adelante</td>
+            <td>Bloqueado (En investigación)</td>
+            <td><span class="status-pill warning">Sin Exploit Público</span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- PASOS DE INSTALACIÓN -->
     <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Paso a Paso de Instalación</h2>
 
     <div class="steps-container">
 
       <div class="step-card">
         <span class="step-number">Paso 01</span>
-        <h3><i class="fa-solid fa-plane"></i> Preparación del Kindle y Modo Avión</h3>
-        <p>Asegurá el entorno para evitar actualizaciones automáticas del firmware de Amazon.</p>
+        <h3><i class="fa-solid fa-plane"></i> Aislamiento del Dispositivo (Modo Avión y Verificación)</h3>
+        <p>Prevención de actualizaciones automáticas por parte de Amazon:</p>
         <ul>
-          <li>Activá el <strong>Modo Avión</strong> en los ajustes del Kindle.</li>
-          <li>Conectá el Kindle a la PC mediante cable USB.</li>
-          <li>Verificá la versión de firmware exacta en <strong>Ajustes ➔ Opciones de dispositivo ➔ Información del dispositivo</strong>.</li>
+          <li>Activá el <strong>Modo Avión</strong> inmediatamente desde los ajustes del Kindle.</li>
+          <li>Conectá el Kindle a la PC vía USB y verificá tu versión exacta en <strong>Ajustes ➔ Opciones de dispositivo ➔ Información del dispositivo</strong>.</li>
+          <li>Comprobá que el archivo de actualización remota no se haya descargado en la memoria; si existe un archivo llamado <code>update.bin</code> en la raíz, elimínalo.</li>
         </ul>
       </div>
 
       <div class="step-card">
         <span class="step-number">Paso 02</span>
-        <h3><i class="fa-solid fa-file-zipper"></i> Copia de Archivos del Exploit (LanguageBreak)</h3>
-        <p>Inyección de archivos en el almacenamiento interno del lector:</p>
+        <h3><i class="fa-solid fa-folder-open"></i> Transferencia del Exploit (WinterBreak / LanguageBreak)</h3>
+        <p>Carga de los archivos necesarios según el método seleccionado:</p>
         <ul>
-          <li>Extraé el contenido del paquete LanguageBreak correspondiente a tu versión de firmware.</li>
-          <li>Copiá la carpeta <code>LanguageBreak</code> y los archivos binarios directamente en la raíz de la memoria del Kindle.</li>
-          <li>Desconectá el dispositivo de forma segura de la PC.</li>
+          <li><strong>Método WinterBreak (Recomendado FW 5.16.x):</strong> Extraé los archivos del paquete WinterBreak directamente en la raíz del almacenamiento del Kindle.</li>
+          <li><strong>Método LanguageBreak (Alternativo FW 5.14.3 - 5.16.2.1.1):</strong> Copiá la carpeta <code>LanguageBreak</code> y sus binarios a la raíz.</li>
+          <li>Asegurate de que los archivos mantengan la estructura de directorios intacta antes de desconectar el lector.</li>
         </ul>
       </div>
 
       <div class="step-card">
         <span class="step-number">Paso 03</span>
-        <h3><i class="fa-solid fa-language"></i> Disparo del Exploit e Instalación del Hotfix</h3>
-        <p>Ejecución de la vulnerabilidad de idioma en la interfaz:</p>
+        <h3><i class="fa-solid fa-bolt"></i> Ejecución del Exploit e Instalación del Hotfix Universal</h3>
+        <p>Inyección de la vulnerabilidad y fijación del acceso root permanente:</p>
         <ul>
-          <li>En el Kindle, andá a <strong>Ajustes ➔ Idioma y diccionarios ➔ Idioma</strong>.</li>
-          <li>Seleccioná el idioma del exploit (Chino / Lenguaje de prueba) para forzar el reinicio en modo jailbreak.</li>
-          <li>Una vez reiniciado, volvé a conectar al PC e instalá el archivo <code>Update_hotfix_.bin</code> desde <strong>Ajustes ➔ Actualizar mi Kindle</strong> para fijar el jailbreak permanente.</li>
+          <li>Ejecutá el activador correspondiente según el exploit (demostración por interfaz o selección de idioma de prueba).</li>
+          <li>Una vez que el Kindle se reinicie y muestre la confirmación del exploit, reconectalo a la PC.</li>
+          <li>Copiá el archivo <code>Update_hotfix_.bin</code> a la raíz del Kindle, desconéctalo y ve a <strong>Ajustes ➔ Menú (3 puntos) ➔ Actualizar mi Kindle</strong> para fijar las firmas del jailbreak de forma definitiva.</li>
         </ul>
       </div>
 
       <div class="step-card">
         <span class="step-number">Paso 04</span>
-        <h3><i class="fa-solid fa-book-open"></i> Instalación de KUAL y KOReader</h3>
-        <p>Carga del menú de aplicaciones y lector avanzado multitarea:</p>
+        <h3><i class="fa-solid fa-book-open"></i> Instalación de KUAL, KOReader y Bloqueo OTA</h3>
+        <p>Despliegue del ecosistema de lectura avanzado y protección de sistema:</p>
         <ul>
-          <li>Copiá las carpetas <code>kual</code> y <code>koreader</code> a la raíz del Kindle.</li>
-          <li>Abrí la aplicación <strong>KUAL</strong> desde tu biblioteca de libros.</li>
-          <li>Iniciá <strong>KOReader</strong> para leer archivos EPUB, PDF ajustados, cambiar tipografías avanzadas y leer cómics en blanco y negro sin conversión previa.</li>
+          <li>Extraé las carpetas <code>extensions</code>, <code>koreader</code> y el Booklet de <strong>KUAL</strong> en la raíz de la memoria interna.</li>
+          <li>Iniciá <strong>KUAL</strong> desde tu biblioteca e instalá el script <code>renameotbin</code> desde el menú de utilidades para deshabilitar las actualizaciones automáticas permanentemente.</li>
+          <li>Abrí <strong>KOReader</strong> para disfrutar de lectura nativa de archivos EPUB, reflow de PDF, cómics (CBZ/CBR) y personalización del refresco E-Ink.</li>
         </ul>
       </div>
 
     </div>
 
-    <!-- PREGUNTAS FRECUENTES -->
     <section class="faq-section">
       <h2 class="faq-title">
         <i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes y Respuestas a Errores
@@ -142,28 +149,28 @@
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Puedo perder el Jailbreak si el Kindle se actualiza?
+            <i class="fa-solid fa-chevron-right"></i> ¿Cuál es la diferencia entre WinterBreak y LanguageBreak?
           </div>
           <p class="faq-answer">
-            Sí. Si el dispositivo se conecta a Internet y descarga un nuevo firmware de Amazon, se perderán las firmas del jailbreak. Mantené el <strong>Modo Avión</strong> activado o utilizá parches de bloqueo OTA como <code>renamedotbin</code> mediante KUAL.
+            <strong>WinterBreak</strong> es la solución más reciente del ecosistema KindleModding, optimizada para ejecutarse de forma más rápida y estable en firmwares 5.16.x. <strong>LanguageBreak</strong> utiliza una vulnerabilidad en los paquetes de idioma, siendo una alternativa sólida si WinterBreak presenta fallas de arranque en tu revisión.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Cuáles son las ventajas de usar KOReader en lugar del sistema nativo?
+            <i class="fa-solid fa-chevron-right"></i> ¿Qué ocurre si mi Kindle se actualiza a la versión 5.16.3 o superior?
           </div>
           <p class="faq-answer">
-            KOReader permite leer archivos **EPUB** directamente sin necesidad de convertirlos con Calibre, ofrece refinado nativo de PDF (reflow), gestión de gestos, sincronización en la nube con Dropbox/WebDAV y personalización completa del refresco de pantalla E-Ink.
+            Las versiones 5.16.3 en adelante parchean los exploits de espacio de usuario conocidos. Se perderá el acceso a KUAL y KOReader. Por ello es indispensable ejecutar la herramienta de bloqueo OTA (<code>renameotbin</code>) inmediatamente tras aplicar el Hotfix.
           </p>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si KUAL no abre y sale el cartel "Application Error"?
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué KUAL no abre y sale la leyenda "Application Error"?
           </div>
           <p class="faq-answer">
-            Por lo general ocurre porque el **Hotfix** no se instaló correctamente tras el primer reinicio, o porque la versión de KUAL no es la adecuada para arquitecturas de 32/64 bits según tu modelo. Volvé a ejecutar el instalador `Update_hotfix_.bin` desde los ajustes de la consola.
+            Este error se produce cuando el archivo <strong>Hotfix Universal</strong> no se ejecutó correctamente desde el menú de actualización, o porque estás utilizando la versión de KUAL en formato Documento en lugar del formato Booklet copiado en la raíz de la memoria.
           </p>
         </div>
 
