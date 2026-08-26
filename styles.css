@@ -1173,3 +1173,27 @@ code {
   transform: translateX(3px);
   color: var(--accent-cyan, #00f3ff);
 }
+/* Badges de Requisitos en Guías */
+.req-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.req-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c4c7d5;
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.req-pill.diff-easy { border-color: rgba(0, 255, 136, 0.4); color: #00ff88; }
+.req-pill.diff-medium { border-color: rgba(255, 170, 0, 0.4); color: #ffaa00; }
+.req-pill.diff-hard { border-color: rgba(255, 0, 85, 0.4); color: #ff0055; }
