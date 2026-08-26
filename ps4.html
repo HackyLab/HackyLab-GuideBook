@@ -30,8 +30,15 @@
       </div>
       <h1>PS4: Exploit Vue AfterFree, BD-JB, WebKit & GoldHEN</h1>
       <p class="guide-subtitle">
-        Guía integral con todos los métodos de instalación: Consolas sin app Vue, consolas hackeadas previamente, alternativa por discos BD-JB y método experimental por navegador WebKit para firmwares 11.50+.
+        Guía integral con todos los métodos de instalación: Consolas sin app Vue, consolas hackeadas previamente, alternativa por discos BD-JB y método por navegador WebKit para firmwares 11.50+.
       </p>
+
+      <!-- BADGES DE REQUISITOS Y DIFICULTAD -->
+      <div class="req-badges-container">
+        <span class="req-pill"><i class="fa-solid fa-usb"></i> Pendrive exFAT</span>
+        <span class="req-pill"><i class="fa-solid fa-globe"></i> App Vue / BD-RE / Navegador</span>
+        <span class="req-pill diff-medium"><i class="fa-solid fa-gauge-high"></i> Dificultad: Media</span>
+      </div>
     </header>
 
     <!-- Caja de Descarga GOOGLE DRIVE -->
@@ -72,7 +79,7 @@
           </tr>
           <tr>
             <td><strong>FW 11.50 - 13.00 (WebKit)</strong></td>
-            <td>Userland Browser + Kernel Chain</td>
+            <td>Userland Browser + OOM Kernel Chain</td>
             <td>40% - 65% (Baja / Variable)</td>
             <td><span class="status-pill warning">Experimental (Inestable)</span></td>
           </tr>
@@ -127,12 +134,13 @@
       <!-- CASO 4: Opción WebKit Experimental -->
       <div class="step-card warning-card">
         <span class="step-number">CASO D</span>
-        <h3><i class="fa-solid fa-globe"></i> Método WebKit Browser (Experimental - FW 11.50 - 13.00)</h3>
-        <p>Si tenés una PS4 Digital (sin lector de discos) y no querés o no podés hacer la restauración del sistema para la App Vue:</p>
+        <h3><i class="fa-solid fa-globe"></i> Método WebKit Browser (FW 11.50 - 13.00)</h3>
+        <p>Si tenés una PS4 Digital (sin lector de discos) y no podés hacer la restauración de sistema para la App Vue:</p>
         <ul>
-          <li><strong>Acceso:</strong> Abrí el Navegador Web de la PS4 e ingresá a un Host compatible con el exploit WebKit (o usá DNS para redirigir la guía de usuario).</li>
-          <li><strong>Comportamiento:</strong> Al ser un método <strong>experimental</strong>, requiere paciencia. Es común ver errores de memoria (<em>"Memoria insuficiente en el navegador"</em>), congelamientos o cierres inesperados antes de lograr gatillar el Kernel Exploit.</li>
-          <li><strong>Recomendación:</strong> Si la tasa de fallo es muy alta, reintentá limpiando las cookies y datos del navegador, o priorizá los métodos Vue AfterFree / BD-JB que ofrecen mayor efectividad.</li>
+          <li><strong>URL del Host:</strong> Abrí el Navegador Web de la PS4 e ingresá a: <code>raw-game.com/zrm</code></li>
+          <li><strong>Paso 1 (Detección y Caché):</strong> Al ingresar por primera vez, el sitio creará automáticamente el almacenamiento en la memoria caché del navegador para habilitar su uso offline. Esperá a que llegue al 100%.</li>
+          <li><strong>Paso 2 (Trigger OOM - Memoria Llena):</strong> Tras cargar la caché, el exploit intentará gatillar el Kernel Exploit forzando la memoria. Aparecerá la ventana modal de <strong>"Memoria insuficiente en el navegador"</strong>. Esto es un comportamiento normal y esperado. Presioná <strong>OK</strong> para continuar con la inyección del payload.</li>
+          <li><strong>Paso 3 (Inyección de GoldHEN):</strong> Si el exploit se ejecuta con éxito, enviará <code>goldhen.bin</code> a la consola. Si el navegador se congela o cierra, limpiá las cookies en la configuración del navegador y reintentá.</li>
         </ul>
       </div>
 
@@ -159,8 +167,8 @@
         <p>Preparación e inyección inicial del payload.</p>
         <ul>
           <li>Copiá el archivo <code>goldhen.bin</code> en la raíz de un pendrive USB formateado en exFAT.</li>
-          <li>Conectá el USB a la PS4 y ejecutá el método elegido (abrí <strong>PlayStation Vue</strong>, el disco <strong>BD-JB</strong> o la URL en el <strong>Navegador WebKit</strong>).</li>
-          <li>El exploit copiará automáticamente <code>goldhen.bin</code> a la memoria interna (<code>/data/</code>) de la consola.
+          <li>Conectá el USB a la PS4 y ejecutá el método elegido (abrí <strong>PlayStation Vue</strong>, el disco <strong>BD-JB</strong> o navegá a <code>raw-game.com/zrm</code>).</li>
+          <li>El exploit copiará automáticamente <code>goldhen.bin</code> a la memoria interna (<code>/data/</code>) de la consola.</li>
           <li><strong>¡Tras este primer éxito, ya NO necesitás conectar el USB para cargas posteriores!</strong></li>
         </ul>
       </div>
@@ -187,10 +195,10 @@
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Se puede usar el exploit sin pendrive USB?
+            <i class="fa-solid fa-chevron-right"></i> ¿Por qué sale "Memoria insuficiente" en raw-game.com/zrm?
           </div>
           <p class="faq-answer">
-            Sí. El pendrive solo hace falta la primera vez para pasar el payload <code>goldhen.bin</code> al almacenamiento interno de la PS4 (<code>/data/</code>). Luego podés desenchufarlo para siempre.
+            Es parte del funcionamiento intencional del exploit (Out of Memory / OOM). Al presionar OK, el sistema aprovecha esa falla de memoria para ejecutar el exploit de Kernel e inyectar GoldHEN.
           </p>
         </div>
 
@@ -199,7 +207,7 @@
             <i class="fa-solid fa-chevron-right"></i> ¿Conviene usar WebKit o Vue AfterFree en FW 11.50 - 13.00?
           </div>
           <p class="faq-answer">
-            Vue AfterFree (o BD-JB si tenés lectora) es significativamente más estable. El método WebKit por navegador es una alternativa útil para consolas digitales sin app Vue, pero requiere varios intentos por los fallos de memoria del navegador.
+            Vue AfterFree (o BD-JB si tenés lectora) es significativamente más estable. El método WebKit por navegador es una alternativa muy útil para consolas digitales sin app Vue.
           </p>
         </div>
 
