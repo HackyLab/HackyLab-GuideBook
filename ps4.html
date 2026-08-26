@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PS4 Vue AfterFree & BD-JB | Hackyntosh</title>
+  <title>PS4 Vue AfterFree, BD-JB & WebKit | Hackyntosh</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,7 +18,7 @@
   <main class="main-layout">
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
 
-    <!-- Banner de la Consola (Contenedor Blanco) -->
+    <!-- Banner de la Consola -->
     <div class="guide-banner">
       <img src="img/ps4.jpg" alt="PS4 Banner">
     </div>
@@ -28,9 +28,9 @@
         <span class="badge ps">PlayStation 4</span>
         <span class="v-badge">FW 7.00 - 13.00</span>
       </div>
-      <h1>PS4: Exploit Vue AfterFree, BD-JB & GoldHEN</h1>
+      <h1>PS4: Exploit Vue AfterFree, BD-JB, WebKit & GoldHEN</h1>
       <p class="guide-subtitle">
-        Guía integral con todos los métodos de instalación: Consolas limpias sin app Vue, consolas previamente hackeadas, alternativas por BD-JB y matriz de compatibilidad por versión de firmware.
+        Guía integral con todos los métodos de instalación: Consolas sin app Vue, consolas hackeadas previamente, alternativa por discos BD-JB y método experimental por navegador WebKit para firmwares 11.50+.
       </p>
     </header>
 
@@ -38,37 +38,43 @@
     <div class="download-card">
       <div class="download-info">
         <h3><i class="fa-brands fa-google-drive" style="color: #34a853;"></i> Pack Completo Vue AfterFree + Payloads en Drive</h3>
-        <p>Incluye VueSystemBackup.7z, VueLite, SaveData CUSA00960, GoldHEN y herramientas de inyección.</p>
+        <p>Incluye VueSystemBackup.7z, VueLite, SaveData CUSA00960, GoldHEN, WebKit Hosts y herramientas de inyección.</p>
       </div>
       <a href="https://drive.google.com/drive/u/2/folders/1QUvOzPDXCzslBnyq9eJ0U6OVS0SQXMMD" target="_blank" rel="noopener noreferrer" class="dl-btn-gdrive">
         <i class="fa-brands fa-google-drive"></i> Abrir Google Drive
       </a>
     </div>
 
-    <h3><i class="fa-solid fa-microchip"></i> Tabla de Compatibilidad de Firmware</h3>
+    <h3><i class="fa-solid fa-microchip"></i> Tabla de Compatibilidad y Vectores de Entrada</h3>
 
     <div class="table-container">
       <table class="custom-table">
         <thead>
           <tr>
-            <th>Versión de Firmware</th>
-            <th>Kernel Exploit (Kex)</th>
+            <th>Versión / Método</th>
+            <th>Vector de Entrada / Kex</th>
             <th>Tasa de Éxito / Estabilidad</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>FW 7.00 - 12.02</strong></td>
-            <td>Lapse Kex</td>
+            <td><strong>FW 7.00 - 12.02 (Vue / BD-JB)</strong></td>
+            <td>Lapse Kex / Userland App</td>
             <td>~100% (Muy Alta)</td>
             <td><span class="status-pill success">Totalmente compatible</span></td>
           </tr>
           <tr>
-            <td><strong>FW 12.50 - 13.00</strong></td>
+            <td><strong>FW 12.50 - 13.00 (Vue / BD-JB)</strong></td>
             <td>NetControl / Poopsploit</td>
             <td>50% - 80% (Media)</td>
             <td><span class="status-pill warning">Compatible (Reintentos)</span></td>
+          </tr>
+          <tr>
+            <td><strong>FW 11.50 - 13.00 (WebKit)</strong></td>
+            <td>Userland Browser + Kernel Chain</td>
+            <td>40% - 65% (Baja / Variable)</td>
+            <td><span class="status-pill warning">Experimental (Inestable)</span></td>
           </tr>
           <tr>
             <td><strong>FW 13.02 o Superior</strong></td>
@@ -85,18 +91,18 @@
 
     <div class="steps-container">
 
-      <!-- CASO 1: Consola Limpia (SIN Hack previo y SIN la App Vue) -->
+      <!-- CASO 1: Consola Limpia -->
       <div class="step-card highlight-card">
         <span class="step-number">CASO A</span>
         <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Consola Limpia (Sin Hack y Sin App PS Vue)</h3>
-        <p>Si tu PS4 está original y nunca tuviste la app PlayStation Vue instalada comercialmente, este es tu método:</p>
+        <p>Si tu PS4 está original y nunca tuviste la app PlayStation Vue instalada comercialmente, este es tu método recomendado:</p>
         <ul>
           <li><strong>Método 1 (Restauración de Sistema):</strong> Descargá <code>VueSystemBackup.7z</code> (o versión Lite). Descomprimilo en la raíz de un pendrive USB. En la PS4 ve a <strong>Ajustes ➔ Sistema ➔ Copia de seguridad y restauración ➔ Restaurar PS4</strong>. Esto instalará un usuario activado localmente junto con la app PS Vue y sus datos modificados.</li>
           <li><strong>Método 2 (Extended Storage - Vue 2.0+):</strong> Podés usar el instalador de almacenamiento extendido en USB sin necesidad de formatear ni hacer un restore completo de la consola.</li>
         </ul>
       </div>
 
-      <!-- CASO 2: Consola Ya Hackeada Previamente -->
+      <!-- CASO 2: Consola Ya Hackeada -->
       <div class="step-card">
         <span class="step-number">CASO B</span>
         <h3><i class="fa-solid fa-unlock"></i> Consola Ya Hackeada (PPPwn, WebKit o BD-JB previo)</h3>
@@ -110,11 +116,23 @@
       <!-- CASO 3: Opción Blu-ray BD-JB -->
       <div class="step-card">
         <span class="step-number">CASO C</span>
-        <h3><i class="fa-solid fa-compact-disc"></i> ¿Qué pasa si uso BD-JB (Disco Blu-ray)?</h3>
+        <h3><i class="fa-solid fa-compact-disc"></i> Opción Blu-ray BD-JB (Lector Físico)</h3>
         <p>El exploit mediante disco Blu-ray grabado (BD-JB) es una alternativa física ideal para FW 7.00 hasta 13.00:</p>
         <ul>
           <li>Si no querés usar la app Vue o preferís un arranque por disco físico, grabá la ISO de BD-JB en un disco BD-RE.</li>
           <li>En <strong>FW 13.00</strong>, BD-JB se puede usar para ejecutar el payload inicial o como método secundario de respaldo si Vue falla.</li>
+        </ul>
+      </div>
+
+      <!-- CASO 4: Opción WebKit Experimental -->
+      <div class="step-card warning-card">
+        <span class="step-number">CASO D</span>
+        <h3><i class="fa-solid fa-globe"></i> Método WebKit Browser (Experimental - FW 11.50 - 13.00)</h3>
+        <p>Si tenés una PS4 Digital (sin lector de discos) y no querés o no podés hacer la restauración del sistema para la App Vue:</p>
+        <ul>
+          <li><strong>Acceso:</strong> Abrí el Navegador Web de la PS4 e ingresá a un Host compatible con el exploit WebKit (o usá DNS para redirigir la guía de usuario).</li>
+          <li><strong>Comportamiento:</strong> Al ser un método <strong>experimental</strong>, requiere paciencia. Es común ver errores de memoria (<em>"Memoria insuficiente en el navegador"</em>), congelamientos o cierres inesperados antes de lograr gatillar el Kernel Exploit.</li>
+          <li><strong>Recomendación:</strong> Si la tasa de fallo es muy alta, reintentá limpiando las cookies y datos del navegador, o priorizá los métodos Vue AfterFree / BD-JB que ofrecen mayor efectividad.</li>
         </ul>
       </div>
 
@@ -137,13 +155,13 @@
 
       <div class="step-card">
         <span class="step-number">Paso 02</span>
-        <h3><i class="fa-solid fa-usb"></i> Primer Arranque con USB (Solo 1ª Vez)</h3>
-        <p>Preparación e inyección inicial de GoldHEN.</p>
+        <h3><i class="fa-solid fa-usb"></i> Primer Arranque con USB (Carga de GoldHEN)</h3>
+        <p>Preparación e inyección inicial del payload.</p>
         <ul>
           <li>Copiá el archivo <code>goldhen.bin</code> en la raíz de un pendrive USB formateado en exFAT.</li>
-          <li>Conectá el USB a la PS4 y abrí la aplicación <strong>PlayStation Vue</strong>.</li>
-          <li>Aceptá la advertencia de PSN haciendo clic en OK. El exploit se ejecutará y copiará automáticamente <code>goldhen.bin</code> a la memoria interna (<code>/data/</code>) de la consola.</li>
-          <li><strong>¡A partir de este momento, ya NO necesitás conectar el USB nunca más!</strong></li>
+          <li>Conectá el USB a la PS4 y ejecutá el método elegido (abrí <strong>PlayStation Vue</strong>, el disco <strong>BD-JB</strong> o la URL en el <strong>Navegador WebKit</strong>).</li>
+          <li>El exploit copiará automáticamente <code>goldhen.bin</code> a la memoria interna (<code>/data/</code>) de la consola.
+          <li><strong>¡Tras este primer éxito, ya NO necesitás conectar el USB para cargas posteriores!</strong></li>
         </ul>
       </div>
 
@@ -152,7 +170,7 @@
         <h3><i class="fa-solid fa-gears"></i> Auto-Jailbreak y Carga de Paquetes</h3>
         <p>Automatización de GoldHEN y uso de PKGs.</p>
         <ul>
-          <li>Podés configurar el <strong>Autoloader / Auto-close</strong> en el menú de Vue para que el exploit se cierre solo a los pocos segundos tras cargar GoldHEN.</li>
+          <li>Podés configurar el <strong>Autoloader / Auto-close</strong> en el menú de Vue o guardar la página del navegador en marcadores/caché offline.</li>
           <li>Ingresá a <strong>Ajustes ➔ GoldHEN ➔ Debug Settings ➔ Package Installer</strong> para instalar tus juegos y aplicaciones en formato <code>.pkg</code>.</li>
         </ul>
       </div>
@@ -169,7 +187,7 @@
 
         <div class="faq-card">
           <div class="faq-question">
-            <i class="fa-solid fa-chevron-right"></i> ¿Se puede usar Vue AfterFree sin pendrive USB?
+            <i class="fa-solid fa-chevron-right"></i> ¿Se puede usar el exploit sin pendrive USB?
           </div>
           <p class="faq-answer">
             Sí. El pendrive solo hace falta la primera vez para pasar el payload <code>goldhen.bin</code> al almacenamiento interno de la PS4 (<code>/data/</code>). Luego podés desenchufarlo para siempre.
@@ -178,10 +196,19 @@
 
         <div class="faq-card">
           <div class="faq-question">
+            <i class="fa-solid fa-chevron-right"></i> ¿Conviene usar WebKit o Vue AfterFree en FW 11.50 - 13.00?
+          </div>
+          <p class="faq-answer">
+            Vue AfterFree (o BD-JB si tenés lectora) es significativamente más estable. El método WebKit por navegador es una alternativa útil para consolas digitales sin app Vue, pero requiere varios intentos por los fallos de memoria del navegador.
+          </p>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
             <i class="fa-solid fa-chevron-right"></i> ¿Qué hago si sufro Kernel Panic (Apagón de la consola)?
           </div>
           <p class="faq-answer">
-            En versiones 12.50 - 13.00, la estabilidad ronda el 60-80%. Si la consola se apaga de golpe, desenchufala unos segundos, encendela, dejá que reconstruya la base de datos y reintentá. Si persiste, considerá usar la opción BD-JB.
+            En versiones 11.50 - 13.00, la estabilidad varía entre 40% y 80% según el método. Si la consola se apaga de golpe, desenchufala unos segundos, encendela, dejá que reconstruya la base de datos y reintentá.
           </p>
         </div>
 
